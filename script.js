@@ -72,25 +72,27 @@ document.addEventListener('DOMContentLoaded', function() {
          typeTitle();
     }
 
-
-    // --- Header 輪播圖 (改為左右輪播) ---
+    // 輪播圖
     const carouselContainer = document.querySelector('.header-carousel-slides');
     const carouselImages = document.querySelectorAll('.header-carousel-slide');
     let currentImageIndex = 0;
     const totalImages = carouselImages.length;
 
-    function showNextImage() {
+    function showImage(index) {
         if (carouselContainer && totalImages > 0) {
-            currentImageIndex = (currentImageIndex + 1) % totalImages;
-            const offset = -currentImageIndex * 100; // 計算偏移量 (%)
+            const offset = -index * 100;
             carouselContainer.style.transform = `translateX(${offset}%)`;
         }
     }
 
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % totalImages;
+        showImage(currentImageIndex);
+    }
+
     if (carouselContainer && totalImages > 0) {
-        // 設定輪播容器寬度
-        carouselContainer.style.width = `${totalImages * 100}%`;
-        setInterval(showNextImage, 4000); // 每4秒切換一次圖片
+        showImage(0);
+        setInterval(showNextImage, 4000);
     }
 });
 

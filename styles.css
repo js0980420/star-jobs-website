@@ -822,21 +822,21 @@ footer {
     background: linear-gradient(45deg, #ff007f, #ff9900);
     color: white;
     border: none;
-    padding: 8px 15px;
-    border-radius: 20px;
+    padding: 10px 28px;
+    border-radius: 24px;
     cursor: pointer;
     font-weight: bold;
-    text-align: center;
-    transition: all 0.3s ease;
-    margin-top: auto; /* 將按鈕推到底部 */
-    align-self: center; /* 按鈕水平居中 */
-    width: fit-content; /* 按鈕寬度自適應內容 */
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(255,0,127,0.18);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s;
+    outline: none;
 }
-
-.details-btn:hover {
+.details-btn:hover, .details-btn:focus {
     background: linear-gradient(45deg, #ff9900, #ff007f);
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(255, 0, 127, 0.4);
+    box-shadow: 0 4px 16px rgba(255,0,127,0.28);
+    transform: scale(1.07);
 }
 
 /* 職缺詳情區塊 (預設隱藏) */
@@ -893,34 +893,36 @@ footer {
 
 /* 輪播圖外層容器 */
 .header-carousel-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 100%; /* 佔滿 header 高度 */
-    overflow: hidden; /* 隱藏超出範圍的圖片 */
-    z-index: 0; /* 在文字和遮罩之下 */
+    max-width: 700px;
+    height: 320px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    z-index: 1;
 }
 
 /* 輪播圖幻燈片容器 */
 .header-carousel-slides {
-    display: flex; /* 水平排列圖片 */
+    display: flex;
+    width: 100%;
     height: 100%;
-    transition: transform 1s ease-in-out; /* 滑動動畫 */
-    /* 寬度由 JS 設定 */
+    transition: transform 0.8s cubic-bezier(.77,0,.18,1);
 }
 
 /* 單張輪播圖幻燈片 */
 .header-carousel-slide {
-    width: 100%; /* 每張圖佔滿容器寬度 */
+    width: 100%;
+    flex-shrink: 0;
     height: 100%;
-    flex-shrink: 0; /* 防止圖片被壓縮 */
 }
 
 .header-carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 圖片填滿並裁剪 */
+    object-fit: cover;
     display: block;
 }
 
