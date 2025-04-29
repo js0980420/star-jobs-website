@@ -240,10 +240,12 @@ footer {
 
 /* 頁首內容 */
 .header-content h1 {
-    font-size: 4rem; /* Tailwind text-6xl */
+    font-size: 5rem; /* 從原本的4rem增加到5rem */
+    font-weight: 800; /* 更粗 */
     color: #fff;
     text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #00e1ff; /* 標題霓虹效果 */
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .header-content p {
@@ -758,12 +760,12 @@ footer {
 }
 
 .typing-effect {
-    border-right: 2px solid #fff;
+    border-right: 4px solid #fff; /* 加粗游標 */
     padding-right: 5px;
     white-space: nowrap;
     overflow: hidden;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: inherit;
+    font-weight: inherit;
     color: #ffcc00;
 }
 
@@ -895,12 +897,12 @@ footer {
 .header-carousel-wrapper {
     position: relative;
     width: 100%;
-    max-width: 700px;
-    height: 320px;
-    margin: 0 auto;
+    max-width: 800px; /* 稍微加寬 */
+    height: 380px; /* 稍微加高 */
+    margin: 1.5rem auto; /* 增加上下間距 */
     overflow: hidden;
     border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25); /* 加強陰影 */
     z-index: 1;
 }
 
@@ -924,6 +926,12 @@ footer {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.5s ease;
+    filter: brightness(1.1) contrast(1.1); /* 增加圖片亮度和對比度 */
+}
+
+.header-carousel-slide:hover img {
+    transform: scale(1.03); /* 懸停時輕微放大 */
 }
 
 /* Header 文字內容區塊調整 */
@@ -931,12 +939,14 @@ footer {
     padding-top: 0; /* 移除繼承的 padding-top */
     position: relative; /* 確保在輪播圖和遮罩之上 */
     z-index: 10;
-    background: rgba(0,0,0, 0.3); /* 文字區加點半透明背景，增加可讀性 */
+    background: rgba(0,0,0,0.6); /* 增加背景不透明度 */
     padding: 2rem;
     border-radius: 15px;
     max-width: 800px; /* 限制文字區寬度 */
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid rgba(255,255,255,0.1); /* 加框 */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2); /* 增加陰影 */
 }
 
 /* Logo 樣式 */
@@ -981,4 +991,16 @@ footer {
     from { transform: rotate(0deg) scale(1); }
     50% { transform: rotate(180deg) scale(1.1); } /* 中間放大一點 */
     to { transform: rotate(360deg) scale(1); }
+}
+
+/* 確保 typing-effect 同樣大小 */
+#main-title-typing .typing-effect {
+    font-size: inherit;
+    font-weight: inherit;
+    border-right: 4px solid #fff; /* 加粗游標 */
+}
+
+/* 調整遮罩 */
+.header-container .absolute.inset-0.bg-black\/60 {
+    background-color: rgba(0, 0, 0, 0.5); /* 降低遮罩深度，讓圖片更清晰 */
 }

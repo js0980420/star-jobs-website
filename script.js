@@ -81,6 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function showImage(index) {
         if (carouselContainer && totalImages > 0) {
             const offset = -index * 100;
+            // 使用更平滑的貝塞爾曲線
+            carouselContainer.style.transition = 'transform 1s cubic-bezier(0.215, 0.61, 0.355, 1)';
             carouselContainer.style.transform = `translateX(${offset}%)`;
         }
     }
@@ -93,6 +95,29 @@ document.addEventListener('DOMContentLoaded', function() {
     if (carouselContainer && totalImages > 0) {
         showImage(0);
         setInterval(showNextImage, 4000);
+    }
+
+    // 圖片加載完成處理
+    const imgElements = document.querySelectorAll('.header-carousel-slide img');
+    let loadedCount = 0;
+    
+    imgElements.forEach(img => {
+        if (img.complete) {
+            loadedCount++;
+        } else {
+            img.addEventListener('load', () => {
+                loadedCount++;
+                // 當所有圖片加載完成時
+                if (loadedCount === imgElements.length) {
+                    document.querySelector('.header-carousel-wrapper').style.opacity = 1;
+                }
+            });
+        }
+    });
+    
+    // 如果所有圖片已經加載完成
+    if (loadedCount === imgElements.length) {
+        document.querySelector('.header-carousel-wrapper').style.opacity = 1;
     }
 });
 
