@@ -233,16 +233,9 @@ footer {
 
 /* 頁首漸層背景與文字效果 */
 .gradient-bg {
-    background: linear-gradient(135deg, #6a00ff, #ff007f, #00e1ff); /* 紫-粉-藍 漸層 */
-    background-size: 200% 200%;
-    animation: gradient-animation 10s ease infinite;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3); /* 文字輕微發光 */
-}
-
-@keyframes gradient-animation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    background: linear-gradient(-45deg, #ff007f, #ff0000, #ff9900, #ffcc00);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
 }
 
 /* 頁首內容 */
@@ -887,4 +880,103 @@ footer {
 }
 .job-details b {
     color: #ff007f; /* 加粗文字用粉色 */
+}
+
+/* 頁首容器調整 */
+.header-container {
+    display: flex; /* 使用 Flexbox 排列 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中（如果需要文字疊加在輪播上） */
+    min-height: 70vh; /* 設定最小高度，可調整 */
+    padding-top: 80px; /* 預留 Logo 空間 */
+}
+
+/* 輪播圖外層容器 */
+.header-carousel-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* 佔滿 header 高度 */
+    overflow: hidden; /* 隱藏超出範圍的圖片 */
+    z-index: 0; /* 在文字和遮罩之下 */
+}
+
+/* 輪播圖幻燈片容器 */
+.header-carousel-slides {
+    display: flex; /* 水平排列圖片 */
+    height: 100%;
+    transition: transform 1s ease-in-out; /* 滑動動畫 */
+    /* 寬度由 JS 設定 */
+}
+
+/* 單張輪播圖幻燈片 */
+.header-carousel-slide {
+    width: 100%; /* 每張圖佔滿容器寬度 */
+    height: 100%;
+    flex-shrink: 0; /* 防止圖片被壓縮 */
+}
+
+.header-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 圖片填滿並裁剪 */
+    display: block;
+}
+
+/* Header 文字內容區塊調整 */
+.header-text-content {
+    padding-top: 0; /* 移除繼承的 padding-top */
+    position: relative; /* 確保在輪播圖和遮罩之上 */
+    z-index: 10;
+    background: rgba(0,0,0, 0.3); /* 文字區加點半透明背景，增加可讀性 */
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 800px; /* 限制文字區寬度 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Logo 樣式 */
+.logo-container {
+    position: absolute;
+    top: 20px; /* 稍微往下移 */
+    left: 30px; /* 稍微往右移 */
+    z-index: 1100;
+}
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.logo-star {
+    font-size: 2rem; /* 加大星星 */
+    color: #ffcc00;
+    margin-right: 10px;
+    text-shadow: 0 0 10px #ffcc00, 0 0 15px #ff9900; /* 加強光暈 */
+    animation: star-spin 6s linear infinite;
+}
+.logo-text {
+    font-family: 'Inter', 'Noto Sans TC', sans-serif; /* 使用更現代的字體 */
+    font-size: 2rem; /* 加大文字 */
+    font-weight: 700; /* 粗體 */
+    letter-spacing: 2px; /* 字距 */
+    color: #fff; /* 白色文字 */
+    text-shadow: 1px 1px 0px #555, /* 模擬一點立體感 */
+                 0 0 8px rgba(255,255,255,0.5); /* 輕微光暈 */
+    /* 嘗試模擬破碎感 (效果有限) */
+    position: relative;
+}
+/* 可以在 logo-text 上加 ::before 或 ::after 做更複雜的破碎效果，但會比較複雜 */
+
+/* 移除之前的 .color-flow 應用在 logo-text 上，或調整 .color-flow */
+.color-flow {
+    /* ... 保留之前的 color-flow 樣式，如果其他地方還需要 ... */
+    /* 如果 logo 不需要顏色流動，可以移除 logo-text 的 color-flow class */
+}
+
+@keyframes star-spin {
+    from { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); } /* 中間放大一點 */
+    to { transform: rotate(360deg) scale(1); }
 }
