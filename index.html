@@ -13,251 +13,25 @@
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <style>
-        @keyframes bg-move {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .gradient-bg {
-            background: linear-gradient(-45deg, #ff007f, #ff0000, #ff9900, #ffcc00);
-            background-size: 400% 400%;
-            animation: bg-move 10s ease infinite;
-        }
-
-        @keyframes button-glow {
-            0%, 100% {
-                box-shadow: 0 0 10px rgba(255,0,127,0.5);
-            }
-            50% {
-                box-shadow: 0 0 20px rgba(255,0,127,0.8), 0 0 30px rgba(255,0,127,0.6);
-            }
-        }
-
-        .cta-btn {
-            animation: button-glow 2s infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        /* 讓每張卡片有不同的動畫延遲，看起來像波浪 */
-        .job-card:nth-child(1) {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .job-card:nth-child(2) {
-            animation: float 4s ease-in-out infinite 1s; /* 1秒延遲 */
-        }
-
-        .job-card:nth-child(3) {
-            animation: float 4s ease-in-out infinite 2s; /* 2秒延遲 */
-        }
-
-        .animated-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .animated-bg::before {
-            content: "";
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
-            background: radial-gradient(circle, transparent 20%, #000 80%),
-                        linear-gradient(45deg, #ff007f 25%, transparent 25%),
-                        linear-gradient(-45deg, #6a00ff 25%, transparent 25%);
-            background-size: 20px 20px, 60px 60px, 60px 60px;
-            animation: bg-scroll 15s linear infinite;
-            opacity: 0.15;
-        }
-
-        @keyframes bg-scroll {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .typing-container {
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0,0,0,0.7);
-            color: #fff;
-            padding: 10px 0;
-        }
-
-        .typing-effect {
-            border-right: 2px solid #fff;
-            padding-right: 5px;
-            white-space: nowrap;
-            overflow: hidden;
-            font-size: 18px;
-            font-weight: bold;
-            color: #ffcc00;
-        }
-
-        @keyframes hue-rotate {
-            0% {
-                filter: hue-rotate(0deg);
-            }
-            100% {
-                filter: hue-rotate(360deg);
-            }
-        }
-
-        .color-flow {
-            background: linear-gradient(45deg, #ff0000, #ff9900, #ffff00, #33cc33, #3399ff, #cc33ff);
-            background-size: 600% 600%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: hue-rotate 10s infinite linear;
-        }
-
-        /* 卡片內容區 */
-        .card-content {
-            padding: 1rem 1.5rem 1.5rem 1.5rem; /* 統一內邊距 */
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1; /* 讓內容區佔滿剩餘空間 */
-        }
-
-        .job-card ul {
-            list-style: none;
-            padding: 0; /* 移除 ul 的預設 padding */
-            margin-bottom: 1rem; /* 列表下方間距 */
-            flex-grow: 1; /* 讓列表填滿空間，按鈕置底 */
-        }
-
-        .job-card li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.2rem;
-            position: relative;
-            color: #ccc; /* 調整列表文字顏色 */
-            border-bottom: none; /* 移除之前的虛線 */
-        }
-
-        .job-card li::before {
-            content: '✦';
-            position: absolute;
-            left: 0;
-            color: #ffcc00;
-            font-size: 0.8rem;
-            top: 4px;
-        }
-
-        /* 查看詳情按鈕 */
-        .details-btn {
-            background: linear-gradient(45deg, #ff007f, #ff9900);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            text-align: center;
-            transition: all 0.3s ease;
-            margin-top: auto; /* 將按鈕推到底部 */
-            align-self: center; /* 按鈕水平居中 */
-            width: fit-content; /* 按鈕寬度自適應內容 */
-        }
-
-        .details-btn:hover {
-            background: linear-gradient(45deg, #ff9900, #ff007f);
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(255, 0, 127, 0.4);
-        }
-
-        /* 職缺詳情區塊 (預設隱藏) */
-        .job-details {
-            display: none; /* 預設隱藏 */
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px dashed rgba(255, 255, 255, 0.3); /* 分隔線 */
-            text-align: left; /* 詳細內容靠左 */
-            color: #ddd; /* 詳細內容文字顏色 */
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .job-details h4 {
-            color: #ffcc00; /* 詳細內容小標題顏色 */
-            font-size: 1.1rem;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-            border-bottom: 1px solid #ffcc00;
-            display: inline-block;
-            padding-bottom: 2px;
-        }
-
-        .job-details ul {
-            list-style: disc; /* 使用圓點列表 */
-            padding-left: 1.5rem; /* 列表縮排 */
-            margin-bottom: 1rem;
-        }
-        .job-details li {
-           color: #ddd; /* 確保列表項顏色 */
-           padding-left: 0; /* 移除繼承的 padding */
-           border-bottom: none; /* 移除繼承的 border */
-        }
-        .job-details li::before {
-            content: none; /* 移除繼承的星號 */
-        }
-
-        .job-details p {
-            margin-bottom: 0.8rem;
-        }
-        .job-details b {
-            color: #ff007f; /* 加粗文字用粉色 */
-        }
-    </style>
-
 </head>
 <body class="bg-amber-50 text-gray-800">
 
-    <div class="top-contact-bar">
-        <div class="container">
-            <span class="blink">★ 立即應徵 ★</span>
-            <span class="contact-info">經紀人LINE：<a href="https://line.me/ti/p/EdPkK988c-" target="_blank">點擊加入好友</a></span>
-            <span class="action-buttons">
-                <a href="#apply" class="quick-btn">快速面試</a>
-            </span>
-        </div>
+    <div class="logo-container">
+        <a href="#" class="logo-link">
+             <span class="logo-star"><i class="fas fa-star"></i></span>
+             <span class="logo-text color-flow">星啟點</span>
+        </a>
     </div>
 
     <header class="gradient-bg text-white py-16 md:py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/40 z-0"></div>
+        <div class="header-carousel">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1920&q=80" alt="Carousel Image 1">
+            <img src="https://images.unsplash.com/photo-1505664194779-8beace6f2051?auto=format&fit=crop&w=1920&q=80" alt="Carousel Image 2">
+            <img src="https://images.unsplash.com/photo-1517694712200-2943a7090229?auto=format&fit=crop&w=1920&q=80" alt="Carousel Image 3">
+             <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1920&q=80" alt="Carousel Image 4">
+        </div>
+        <div class="absolute inset-0 bg-black/60 z-1"></div>
 
-        <!-- 固定在右側的按鈕 -->
         <div class="fixed-buttons">
             <a href="https://line.me/ti/p/EdPkK988c-" target="_blank" class="button line-btn" title="加入LINE好友">
                 <i class="fab fa-line fa-2x" style="color:#00B900"></i>
@@ -270,14 +44,13 @@
         </div>
 
         <div class="container mx-auto px-6 text-center relative z-10">
-            <div class="w-full max-w-3xl h-48 md:h-64 mx-auto mb-8 rounded-lg shadow-lg bg-white/10 p-4">
-        <div class="header-bg"></div>
-        <div class="header-content">
-            <h1>星啟點國際娛樂</h1>
-            <p>探索你的無限可能・開啟你的閃耀未來</p>
-            <p class="header-desc">模特兒外拍企劃助理｜網紅經紀｜彈性工時｜高收入獎金</p>
-            <a href="#apply" class="cta-btn">立即應徵</a>
-            <div class="header-note">不仲介色情、不提供毒品、未滿18歲請勿應徵</div>
+            <div class="header-content">
+                 <h1 id="main-title-typing"><span class="typing-effect"></span></h1>
+                 <p>探索你的無限可能・開啟你的閃耀未來</p>
+                 <p class="header-desc">模特兒外拍企劃助理｜網紅經紀｜彈性工時｜高收入獎金</p>
+                 <a href="#apply" class="cta-btn">立即應徵</a>
+                 <div class="header-note">不仲介色情、不提供毒品、未滿18歲請勿應徵</div>
+            </div>
         </div>
     </header>
 
@@ -286,21 +59,21 @@
         <section id="benefits" class="mb-16">
             <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">為什麼選擇星啟點？</h2>
             <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="bg-white p-6 rounded-lg shadow-md benefit-card">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0c-1.657 0-3-.895-3-2s1.343-2 3-2 3-.895 3-2 1.343-2 3-2m0 8c1.11 0 2.08-.402 2.599-1M12 16v1m0-1v-4m0 0H9m3 0h3m-3 0a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
                     </svg>
                     <h3 class="text-xl font-semibold mb-2">優渥薪資 (可日領)</h3>
                     <p class="text-gray-600">部分職位提供日領現金，薪資範圍廣，努力看得見回報。</p>
                 </div>
-                 <div class="bg-white p-6 rounded-lg shadow-md">
+                 <div class="bg-white p-6 rounded-lg shadow-md benefit-card">
                      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     <h3 class="text-xl font-semibold mb-2">彈性自由排班</h3>
                     <p class="text-gray-600">時間自己掌握，適合兼職、打工、短期需求，生活工作平衡。</p>
                 </div>
-                 <div class="bg-white p-6 rounded-lg shadow-md">
+                 <div class="bg-white p-6 rounded-lg shadow-md benefit-card">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -316,7 +89,7 @@
 
                 <!-- 職缺卡片 1: 模特兒外拍企劃助理 -->
                 <div class="job-card">
-                    <img src="https://images.unsplash.com/photo-1509913841876-b8a297b3a817?auto=format&fit=crop&w=600&q=80" alt="模特兒外拍">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="模特兒外拍">
                     <div class="card-content">
                         <h3>模特兒外拍企劃助理</h3>
                         <ul>
@@ -365,7 +138,7 @@
 
                 <!-- 職缺卡片 2: 帶貨直播主 -->
                 <div class="job-card">
-                    <img src="https://images.unsplash.com/photo-1611162617213-7d714051011e?auto=format&fit=crop&w=600&q=80" alt="帶貨直播主">
+                    <img src="https://images.unsplash.com/photo-1598387993211-5f781b302613?auto=format&fit=crop&w=600&q=80" alt="帶貨直播主">
                     <div class="card-content">
                         <h3>男女帶貨直播主</h3>
                          <ul>
@@ -550,16 +323,6 @@
             </ul>
         </section>
 
-        <section class="overseas-jobs">
-            <h2>國外短期旅遊打工</h2>
-            <p>澳洲（悉尼、墨爾本）、加拿大（溫哥華、多倫多）<br>包住宿，短期高薪，體驗異國生活</p>
-            <ul>
-                <li>18-35歲，男女皆可</li>
-                <li>不簽任何形式合約，試上一樣有薪水</li>
-                <li>未滿18歲請勿應徵</li>
-            </ul>
-        </section>
-
         <section id="apply" class="apply-section">
             <h2>應徵方式</h2>
             <p>請投遞履歷並附上近期個人照片（生活照／IG連結皆可）<br>
@@ -586,6 +349,13 @@
                     </div>
                 </div>
             </div>
+            <div class="footer-quick-contact">
+                <span class="blink">★ 立即應徵 ★</span>
+                <span class="contact-info">經紀人LINE：<a href="https://line.me/ti/p/EdPkK988c-" target="_blank">點擊加入好友</a></span>
+                <span class="action-buttons">
+                    <a href="#apply" class="quick-btn">快速面試</a>
+                </span>
+            </div>
             <div class="footer-faq">
                 <h3>常見問題 Q&A</h3>
                 <ul>
@@ -604,52 +374,64 @@
             <p class="footer-copy mt-4">2025 by Alex Wang設計</p>
         </div>
     </footer>
-        
 
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const text = "星啟點國際娛樂 - 高薪職缺招募中...";
-            const typingElement = document.querySelector('.typing-effect');
-            let i = 0;
+            const titleText = "星啟點國際娛樂";
+            const titleElement = document.querySelector('#main-title-typing .typing-effect');
+            let titleIndex = 0;
             
-            function typeWriter() {
-                if (i < text.length) {
-                    typingElement.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
+            function typeTitle() {
+                if (titleIndex < titleText.length) {
+                    titleElement.innerHTML += titleText.charAt(titleIndex);
+                    titleIndex++;
+                    setTimeout(typeTitle, 150);
                 } else {
-                    setTimeout(() => {
-                        typingElement.innerHTML = "";
-                        i = 0;
-                        typeWriter();
-                    }, 2000);
+                    // setTimeout(() => {
+                    //     titleElement.innerHTML = "";
+                    //     titleIndex = 0;
+                    //     typeTitle();
+                    // }, 5000);
                 }
             }
-            
-            typeWriter();
+            if(titleElement) {
+                 typeTitle();
+            }
+
+            const carouselImages = document.querySelectorAll('.header-carousel img');
+            let currentImageIndex = 0;
+
+            function showNextImage() {
+                if (carouselImages.length > 0) {
+                    carouselImages[currentImageIndex].style.opacity = '0';
+                    currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+                    carouselImages[currentImageIndex].style.opacity = '1';
+                }
+            }
+
+            if (carouselImages.length > 0) {
+                carouselImages.forEach((img, index) => {
+                    img.style.opacity = index === 0 ? '1' : '0';
+                    img.style.transition = 'opacity 1s ease-in-out';
+                });
+                setInterval(showNextImage, 5000);
+            }
         });
 
         function toggleDetails(button) {
-            // 找到按鈕所在的卡片內容區
             const cardContent = button.closest('.card-content');
-            // 找到該卡片內的詳細內容區塊
             const detailsDiv = cardContent.querySelector('.job-details');
 
-            // 切換顯示/隱藏狀態
             if (detailsDiv.style.display === 'block') {
                 detailsDiv.style.display = 'none';
-                button.textContent = '查看詳情'; // 將按鈕文字改回
+                button.textContent = '查看詳情';
             } else {
                 detailsDiv.style.display = 'block';
-                button.textContent = '收合內容'; // 將按鈕文字改為收合
+                button.textContent = '收合內容';
             }
         }
     </script>
-
-    <div class="typing-container">
-        <span class="typing-effect"></span>
-    </div>
 
 </body>
 </html>
