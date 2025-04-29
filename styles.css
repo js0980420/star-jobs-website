@@ -1004,3 +1004,29 @@ footer {
 .header-container .absolute.inset-0.bg-black\/60 {
     background-color: rgba(0, 0, 0, 0.5); /* 降低遮罩深度，讓圖片更清晰 */
 }
+
+#main-title-typing {
+    font-size: 5rem !important; /* 加大字體並強制生效 */
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #00e1ff;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+/* 確保 span 繼承 */
+#main-title-typing .typing-effect {
+    font-size: inherit !important; /* 繼承父級大小 */
+    font-weight: inherit;
+    border-right: 4px solid #fff;
+    color: #ffcc00; /* 打字效果顏色 */
+    /* 保留其他 typing-effect 樣式 */
+}
+
+/* 移除或註解掉可能衝突的舊規則 */
+/*
+.header-content h1 {
+    font-size: 5rem;
+    ...
+}
+*/
