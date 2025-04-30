@@ -26,11 +26,11 @@
                 <span class="color-flow">星啟點</span>
             </a>
             <div class="flex-1 flex justify-end h-full">
-                <div class="nav-links hidden md:flex flex-row items-center space-x-4 mr-6 h-full">
+                <div class="nav-links hidden md:flex flex-row items-center space-x-6 mr-6 h-full">
                     <a href="#benefits" class="hover:text-yellow-300">公司特色</a>
                     <a href="#jobs" class="hover:text-yellow-300">職缺機會</a>
-                    <a href="#apply" class="hover:text-yellow-300">立即應徵</a>
-                    <a href="#wechat-footer" class="hover:text-yellow-300">聯絡我們</a>
+                    <a href="#faq" class="hover:text-yellow-300">常見問答</a>
+                    <a href="#wechat-footer" class="px-4 py-1 rounded-full border-2 border-yellow-400 bg-yellow-300 text-gray-900 font-bold shadow hover:bg-yellow-400 hover:text-black transition">聯絡我們</a>
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-white">
@@ -59,14 +59,42 @@
         <div class="header-note mt-2">不仲介色情、不提供毒品、未滿18歲請勿應徵</div>
     </div>
 
-    <!-- 滿版輪播圖區塊，改為靜態六張圖片，無動畫 -->
-    <div class="w-full bg-black flex flex-wrap justify-center items-center" style="height: 400px; width:100vw;">
-        <img class="object-cover w-1/6 h-full" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="模特兒外拍">
-        <img class="object-cover w-1/6 h-full" src="https://storage.googleapis.com/js-official/files/XQA80Dq8wVnOYvp2r4KYy87qcrooPRPSyIJCDN0j.jpeg" alt="帶貨直播主">
-        <img class="object-cover w-1/6 h-full" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="SPA按摩美容師">
-        <img class="object-cover w-1/6 h-full" src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=600&q=80" alt="娛樂接待/商務公關">
-        <img class="object-cover w-1/6 h-full" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=80" alt="多元彈性兼職/打工">
-        <img class="object-cover w-1/6 h-full" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80" alt="海外短期打工">
+    <!-- 滿版輪播圖區塊，恢復自動輪播、箭頭、圓點指示器 -->
+    <div class="relative w-full overflow-hidden" style="height: 400px; width:100vw;">
+        <div id="header-carousel" class="header-carousel-wrapper w-full h-full relative" style="width:100vw;">
+            <div class="header-carousel-slides w-full h-full" style="width:100vw;">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
+                    <img class="object-cover w-full h-full carousel-img" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80" alt="模特兒外拍" loading="lazy">
+                    <div class="carousel-caption">模特兒外拍企劃助理</div>
+                </div>
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
+                    <img class="object-cover w-full h-full carousel-img" src="https://storage.googleapis.com/js-official/files/XQA80Dq8wVnOYvp2r4KYy87qcrooPRPSyIJCDN0j.jpeg" alt="帶貨直播主" loading="lazy">
+                    <div class="carousel-caption">男女帶貨直播主</div>
+                </div>
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
+                    <img class="object-cover w-full h-full carousel-img" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80" alt="SPA按摩美容師" loading="lazy">
+                    <div class="carousel-caption">SPA按摩美容師</div>
+                </div>
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
+                    <img class="object-cover w-full h-full carousel-img" src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1600&q=80" alt="娛樂接待/商務公關" loading="lazy">
+                    <div class="carousel-caption">娛樂接待 / 商務公關</div>
+                </div>
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
+                    <img class="object-cover w-full h-full carousel-img" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1600&q=80" alt="多元彈性兼職/打工" loading="lazy">
+                    <div class="carousel-caption">多元彈性兼職/打工</div>
+                </div>
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
+                    <img class="object-cover w-full h-full carousel-img" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1600&q=80" alt="海外短期打工" loading="lazy">
+                    <div class="carousel-caption">海外短期打工 (包住宿)</div>
+                </div>
+            </div>
+            <!-- 左右箭頭 -->
+            <button id="carousel-prev" class="carousel-arrow left"><i class="fas fa-chevron-left"></i></button>
+            <button id="carousel-next" class="carousel-arrow right"><i class="fas fa-chevron-right"></i></button>
+            <!-- 圓點指示器 -->
+            <div id="carousel-dots" class="carousel-dots"></div>
+        </div>
+        <div class="carousel-overlay"></div>
     </div>
 
     <!-- 固定在右側的按鈕 (保持不變) -->
@@ -442,6 +470,53 @@
                 typing();
             }
         });
+
+        // 輪播圖JS
+        (function() {
+            const slides = document.querySelectorAll('#header-carousel .header-carousel-slide');
+            const dotsContainer = document.getElementById('carousel-dots');
+            let current = 0;
+            let timer = null;
+            function showSlide(idx) {
+                slides.forEach((slide, i) => {
+                    slide.style.opacity = i === idx ? '1' : '0';
+                    slide.style.zIndex = i === idx ? '2' : '1';
+                    slide.style.transition = 'opacity 0.6s';
+                });
+                Array.from(dotsContainer.children).forEach((dot, i) => {
+                    dot.className = i === idx ? 'dot active' : 'dot';
+                });
+                current = idx;
+            }
+            function prev() {
+                showSlide((current - 1 + slides.length) % slides.length);
+                resetTimer();
+            }
+            function next() {
+                showSlide((current + 1) % slides.length);
+                resetTimer();
+            }
+            function goTo(idx) {
+                showSlide(idx);
+                resetTimer();
+            }
+            function resetTimer() {
+                if (timer) clearInterval(timer);
+                timer = setInterval(() => showSlide((current + 1) % slides.length), 3000);
+            }
+            // 建立圓點
+            dotsContainer.innerHTML = '';
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => goTo(i);
+                dotsContainer.appendChild(dot);
+            });
+            document.getElementById('carousel-prev').onclick = prev;
+            document.getElementById('carousel-next').onclick = next;
+            showSlide(current);
+            resetTimer();
+        })();
     </script>
 
 </body>

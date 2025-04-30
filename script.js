@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
          typeTitle();
     }
 
+    // --- 輪播圖效果 ---
     // 輪播圖
     const carouselContainer = document.querySelector('.header-carousel-slides');
     const carouselImages = document.querySelectorAll('.header-carousel-slide');
