@@ -20,21 +20,23 @@
 
     <!-- 導航欄 -->
     <nav class="bg-gray-800 text-white py-3 fixed top-0 left-0 w-full z-50">
-        <div class="flex justify-between items-center px-6">
-            <a href="#" class="text-2xl font-bold flex items-center">
+        <div class="flex justify-between items-center w-full">
+            <a href="#" class="text-2xl font-bold flex items-center ml-6">
                 <span class="text-yellow-400 mr-2"><i class="fas fa-star"></i></span>
                 <span class="color-flow">星啟點</span>
             </a>
-            <div class="nav-links hidden md:flex space-x-6">
-                <a href="#benefits" class="hover:text-yellow-300">公司特色</a>
-                <a href="#jobs" class="hover:text-yellow-300">職缺機會</a>
-                <a href="#apply" class="hover:text-yellow-300">立即應徵</a>
-                <a href="#wechat-footer" class="hover:text-yellow-300">聯絡我們</a>
-            </div>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-white">
-                    <i class="fas fa-bars"></i>
-                </button>
+            <div class="flex-1 flex justify-end">
+                <div class="nav-links hidden md:flex space-x-6 mr-6">
+                    <a href="#benefits" class="hover:text-yellow-300">公司特色</a>
+                    <a href="#jobs" class="hover:text-yellow-300">職缺機會</a>
+                    <a href="#apply" class="hover:text-yellow-300">立即應徵</a>
+                    <a href="#wechat-footer" class="hover:text-yellow-300">聯絡我們</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-gray-700 py-2 px-6">
@@ -44,8 +46,6 @@
             <a href="#wechat-footer" class="block py-2 hover:text-yellow-300">聯絡我們</a>
         </div>
     </nav>
-
-    <!-- 移除 logo-container -->
 
     <!-- 滿版標題區塊 -->
     <div class="w-full bg-gradient-to-b from-gray-900 to-gray-700 text-white text-center pt-28 pb-8 relative z-10">
@@ -62,33 +62,35 @@
         <div id="header-carousel" class="header-carousel-wrapper w-full h-full relative">
             <div class="header-carousel-slides w-full h-full">
                 <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
-                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1519682577862-22b62b24e493?auto=format&fit=crop&w=1600&q=80" alt="明星鎂光燈">
+                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80" alt="模特兒外拍">
                     <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">模特兒外拍企劃助理</div>
                 </div>
                 <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
-                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1600&q=80" alt="舞台表演">
+                    <img class="object-cover w-full h-full" src="https://storage.googleapis.com/js-official/files/XQA80Dq8wVnOYvp2r4KYy87qcrooPRPSyIJCDN0j.jpeg" alt="帶貨直播主">
                     <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">男女帶貨直播主</div>
                 </div>
                 <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
-                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1600&q=80" alt="演唱會">
+                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80" alt="SPA按摩美容師">
                     <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">SPA按摩美容師</div>
                 </div>
                 <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
-                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1549213783-8284d0336c4f?auto=format&fit=crop&w=1600&q=80" alt="明星走紅毯">
+                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1600&q=80" alt="娛樂接待/商務公關">
                     <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">娛樂接待 / 商務公關</div>
                 </div>
                 <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
-                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1600&q=80" alt="舞台燈光">
+                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1600&q=80" alt="多元彈性兼職/打工">
                     <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">多元彈性兼職/打工</div>
                 </div>
                 <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
-                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1600&q=80" alt="音樂表演">
+                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1600&q=80" alt="海外短期打工">
                     <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">海外短期打工 (包住宿)</div>
                 </div>
             </div>
             <!-- 左右箭頭 -->
             <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center z-20 hover:bg-black/80"><i class="fas fa-chevron-left"></i></button>
             <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center z-20 hover:bg-black/80"><i class="fas fa-chevron-right"></i></button>
+            <!-- 援點指示器 -->
+            <div id="carousel-dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2 z-30"></div>
         </div>
         <div class="absolute inset-0 bg-black/60 z-1 pointer-events-none"></div>
     </div>
@@ -470,29 +472,52 @@
             }
         });
 
-        // 輪播圖左右切換
+        // 輪播圖左右切換與自動輪播與圓點指示器
         (function() {
             const slides = document.querySelectorAll('#header-carousel .header-carousel-slide');
+            const dotsContainer = document.getElementById('carousel-dots');
             let current = 0;
+            let timer = null;
             function showSlide(idx) {
                 slides.forEach((slide, i) => {
                     slide.style.display = i === idx ? 'flex' : 'none';
+                    if (dotsContainer.children[i]) {
+                        dotsContainer.children[i].classList.toggle('bg-yellow-400', i === idx);
+                        dotsContainer.children[i].classList.toggle('bg-gray-400', i !== idx);
+                    }
                 });
+                current = idx;
             }
             function prev() {
-                current = (current - 1 + slides.length) % slides.length;
-                showSlide(current);
+                showSlide((current - 1 + slides.length) % slides.length);
+                resetTimer();
             }
             function next() {
-                current = (current + 1) % slides.length;
-                showSlide(current);
+                showSlide((current + 1) % slides.length);
+                resetTimer();
             }
+            function goTo(idx) {
+                showSlide(idx);
+                resetTimer();
+            }
+            function resetTimer() {
+                if (timer) clearInterval(timer);
+                timer = setInterval(() => showSlide((current + 1) % slides.length), 4000);
+            }
+            // 建立圓點
+            dotsContainer.innerHTML = '';
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'w-3 h-3 rounded-full bg-gray-400 focus:outline-none';
+                dot.onclick = () => goTo(i);
+                dotsContainer.appendChild(dot);
+            });
             document.getElementById('carousel-prev').onclick = prev;
             document.getElementById('carousel-next').onclick = next;
             showSlide(current);
+            resetTimer();
         })();
     </script>
 
 </body>
-</html>
 </html>

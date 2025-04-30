@@ -1036,6 +1036,9 @@ footer {
     width: 100vw !important;
     height: 100% !important;
     min-height: 400px;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
 }
 .header-carousel-slide img {
     width: 100vw !important;
@@ -1060,4 +1063,30 @@ nav.bg-gray-800 {
     left: 0;
     right: 0;
     border-bottom: 1px solid #222;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+nav .flex {
+    width: 100vw !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* 援點指示器美化 */
+#carousel-dots button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #bbb;
+    border: none;
+    margin: 0 4px;
+    transition: background 0.3s;
+    outline: none;
+    cursor: pointer;
+}
+#carousel-dots .bg-yellow-400 {
+    background: #ffcc00 !important;
+}
+#carousel-dots .bg-gray-400 {
+    background: #bbb !important;
 }
