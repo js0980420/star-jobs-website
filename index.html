@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
 </head>
 <body class="bg-amber-50 text-gray-800">
 
@@ -26,10 +27,10 @@
                 <span class="color-flow">星啟點</span>
             </a>
             <div class="flex-1 flex justify-end h-full">
-                <div class="nav-links hidden md:flex flex-row items-center space-x-6 mr-6 h-full">
+                <div class="nav-links hidden md:flex flex-row items-center space-x-8 mr-6 h-full">
                     <a href="#benefits" class="hover:text-yellow-300">公司特色</a>
                     <a href="#jobs" class="hover:text-yellow-300">職缺機會</a>
-                    <a href="#faq" class="hover:text-yellow-300">常見問答</a>
+                    <a href="#footer-faq" class="hover:text-yellow-300">常見問答</a>
                     <a href="#wechat-footer" class="px-4 py-1 rounded-full border-2 border-yellow-400 bg-yellow-300 text-gray-900 font-bold shadow hover:bg-yellow-400 hover:text-black transition">聯絡我們</a>
                 </div>
                 <div class="md:hidden">
@@ -42,7 +43,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-gray-700 py-2 px-6">
             <a href="#benefits" class="block py-2 hover:text-yellow-300">公司特色</a>
             <a href="#jobs" class="block py-2 hover:text-yellow-300">職缺機會</a>
-            <a href="#apply" class="block py-2 hover:text-yellow-300">立即應徵</a>
+            <a href="#footer-faq" class="block py-2 hover:text-yellow-300">常見問答</a>
             <a href="#wechat-footer" class="block py-2 hover:text-yellow-300">聯絡我們</a>
         </div>
     </nav>
@@ -62,35 +63,35 @@
     <!-- 滿版輪播圖區塊，恢復自動輪播、箭頭、圓點指示器 -->
     <div class="relative w-full overflow-hidden" style="height: 400px; width:100vw;">
         <div id="header-carousel" class="header-carousel-wrapper w-full h-full relative" style="width:100vw;">
-            <div class="header-carousel-slides w-full h-full" style="width:100vw;">
-                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
-                    <img class="object-cover w-full h-full carousel-img" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80" alt="模特兒外拍" loading="lazy">
+            <div class="header-carousel-slides w-full h-full relative" style="width:100vw;">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                    <img class="carousel-img" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80" alt="模特兒外拍" loading="lazy">
                     <div class="carousel-caption">模特兒外拍企劃助理</div>
                 </div>
-                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
-                    <img class="object-cover w-full h-full carousel-img" src="https://storage.googleapis.com/js-official/files/XQA80Dq8wVnOYvp2r4KYy87qcrooPRPSyIJCDN0j.jpeg" alt="帶貨直播主" loading="lazy">
-                    <div class="carousel-caption">男女帶貨直播主</div>
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                    <img class="carousel-img" src="https://storage.googleapis.com/js-official/files/XQA80Dq8wVnOYvp2r4KYy87qcrooPRPSyIJCDN0j.jpeg" alt="帶貨直播主" loading="lazy">
+                    <div class="carousel-caption">帶貨直播主</div>
                 </div>
-                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
-                    <img class="object-cover w-full h-full carousel-img" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80" alt="SPA按摩美容師" loading="lazy">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                    <img class="carousel-img" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80" alt="SPA按摩美容師" loading="lazy">
                     <div class="carousel-caption">SPA按摩美容師</div>
                 </div>
-                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
-                    <img class="object-cover w-full h-full carousel-img" src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1600&q=80" alt="娛樂接待/商務公關" loading="lazy">
-                    <div class="carousel-caption">娛樂接待 / 商務公關</div>
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                    <img class="carousel-img" src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1600&q=80" alt="娛樂接待/商務公關" loading="lazy">
+                    <div class="carousel-caption">娛樂接待/商務公關</div>
                 </div>
-                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
-                    <img class="object-cover w-full h-full carousel-img" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1600&q=80" alt="多元彈性兼職/打工" loading="lazy">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                    <img class="carousel-img" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1600&q=80" alt="多元彈性兼職/打工" loading="lazy">
                     <div class="carousel-caption">多元彈性兼職/打工</div>
                 </div>
-                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
-                    <img class="object-cover w-full h-full carousel-img" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1600&q=80" alt="海外短期打工" loading="lazy">
-                    <div class="carousel-caption">海外短期打工 (包住宿)</div>
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                    <img class="carousel-img" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1600&q=80" alt="海外短期打工" loading="lazy">
+                    <div class="carousel-caption">海外短期打工</div>
                 </div>
             </div>
             <!-- 左右箭頭 -->
-            <button id="carousel-prev" class="carousel-arrow left"><i class="fas fa-chevron-left"></i></button>
-            <button id="carousel-next" class="carousel-arrow right"><i class="fas fa-chevron-right"></i></button>
+            <button id="carousel-prev" class="carousel-arrow left" aria-label="上一張"><i class="fas fa-chevron-left"></i></button>
+            <button id="carousel-next" class="carousel-arrow right" aria-label="下一張"><i class="fas fa-chevron-right"></i></button>
             <!-- 圓點指示器 -->
             <div id="carousel-dots" class="carousel-dots"></div>
         </div>
@@ -109,10 +110,10 @@
         </a>
     </div>
 
-    <main class="container mx-auto px-6 py-16">
+    <main class="w-full px-0 py-12">
 
-        <section id="benefits" class="mb-16">
-            <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">為什麼選擇星啟點？</h2>
+        <section id="benefits" class="mb-10 w-full px-4 max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">為什麼選擇星啟點？</h2>
             <div class="grid md:grid-cols-3 gap-8 text-center">
                 <div class="bg-white p-6 rounded-lg shadow-md benefit-card">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -138,236 +139,238 @@
             </div>
         </section>
 
-        <section id="jobs" class="jobs-section">
-            <h2 class="color-flow">熱門職缺 OPPORTUNITIES</h2>
-            <div class="jobs-grid grid grid-cols-1 md:grid-cols-3 gap-4 px-2">
+        <section id="jobs" class="jobs-section w-full py-10">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="color-flow text-center">熱門職缺 OPPORTUNITIES</h2>
+                <div class="jobs-grid grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
 
-                <!-- 職缺卡片 1: 模特兒外拍企劃助理 -->
-                <div class="job-card">
-                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="模特兒外拍">
-                    <div class="card-content">
-                        <h3>模特兒外拍企劃助理</h3>
-                        <ul>
-                            <li>✦ 日薪$2,000-$10,000+獎金</li>
-                            <li>✦ 彈性工時 (平日/假日)</li>
-                            <li>✦ 無經驗可｜公司培訓</li>
-                            <li>✦ 專業團隊｜形象打造</li>
-                        </ul>
-                        <button class="details-btn" onclick="toggleDetails(this)">查看詳情</button>
-                        <div class="job-details">
-                            <h4>【職務內容】</h4>
+                    <!-- 職缺卡片 1: 模特兒外拍企劃助理 -->
+                    <div class="job-card">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="模特兒外拍">
+                        <div class="card-content">
+                            <h3>模特兒外拍企劃助理</h3>
                             <ul>
-                                <li>參與品牌商品拍攝、主題外拍、社群短影音企劃</li>
-                                <li>協助進行形象拍照、直播或影片拍攝（由專業團隊指導）</li>
-                                <li>發展個人社群經營（如 IG／TikTok／小紅書）並由公司協助曝光推廣</li>
-                                <li>若有表現機會佳者，安排合作廠商代言、品牌合作案</li>
+                                <li>✦ 日薪$2,000-$10,000+獎金</li>
+                                <li>✦ 彈性工時 (平日/假日)</li>
+                                <li>✦ 無經驗可｜公司培訓</li>
+                                <li>✦ 專業團隊｜形象打造</li>
                             </ul>
-                            <h4>【我們在找的你】</h4>
-                            <ul>
-                                <li>外型亮眼、自信大方、喜歡拍照或表演</li>
-                                <li>有意願朝模特兒／KOL／網紅發展</li>
-                                <li>不限經驗／不限學歷，公司有完整引導與包裝系統</li>
-                                <li>喜歡團隊合作、能配合拍攝安排與節奏</li>
-                            </ul>
-                             <h4>【公司提供】</h4>
-                             <ul>
-                                <li>專業攝影團隊／形象企劃資源</li>
-                                <li>拍攝經驗培訓，含造型、動作指導、鏡頭表現</li>
-                                <li>社群經營指導，協助打造個人品牌</li>
-                                <li>高曝光度拍攝資源＋商業合作推薦</li>
-                                <li>依能力安排拍攝檔期，收入穩定累積</li>
-                             </ul>
-                             <h4>【加分條件】</h4>
-                             <ul>
-                                <li>有經營 IG／TikTok／YouTube 等平台經驗者</li>
-                                <li>有外拍、平面模特兒、舞台表演經驗尤佳</li>
-                                <li>會基本妝容、穿搭者更易入門</li>
-                                <li>可配合出外景（市區近郊）拍攝者優先錄用</li>
-                             </ul>
-                             <p><b>要求條件：</b>男女18-35歲，有無經驗均可，具備自信表現力、親和力。身材勻稱、五官立體，形象健康自然。對拍攝現場有基本了解，能理解簡單的指導動作和場景需求。</p>
-                             <p><b>薪資：</b>時薪 NT$2,000 - NT$10,000 (+獎金) (依案件，日領)</p>
-                             <p><b>地點：</b>台北／新北市拍攝棚、外景地點（依排程安排）</p>
+                            <button class="details-btn" onclick="toggleDetails(this)">查看詳情</button>
+                            <div class="job-details">
+                                <h4>【職務內容】</h4>
+                                <ul>
+                                    <li>參與品牌商品拍攝、主題外拍、社群短影音企劃</li>
+                                    <li>協助進行形象拍照、直播或影片拍攝（由專業團隊指導）</li>
+                                    <li>發展個人社群經營（如 IG／TikTok／小紅書）並由公司協助曝光推廣</li>
+                                    <li>若有表現機會佳者，安排合作廠商代言、品牌合作案</li>
+                                </ul>
+                                <h4>【我們在找的你】</h4>
+                                <ul>
+                                    <li>外型亮眼、自信大方、喜歡拍照或表演</li>
+                                    <li>有意願朝模特兒／KOL／網紅發展</li>
+                                    <li>不限經驗／不限學歷，公司有完整引導與包裝系統</li>
+                                    <li>喜歡團隊合作、能配合拍攝安排與節奏</li>
+                                </ul>
+                                 <h4>【公司提供】</h4>
+                                 <ul>
+                                    <li>專業攝影團隊／形象企劃資源</li>
+                                    <li>拍攝經驗培訓，含造型、動作指導、鏡頭表現</li>
+                                    <li>社群經營指導，協助打造個人品牌</li>
+                                    <li>高曝光度拍攝資源＋商業合作推薦</li>
+                                    <li>依能力安排拍攝檔期，收入穩定累積</li>
+                                 </ul>
+                                 <h4>【加分條件】</h4>
+                                 <ul>
+                                    <li>有經營 IG／TikTok／YouTube 等平台經驗者</li>
+                                    <li>有外拍、平面模特兒、舞台表演經驗尤佳</li>
+                                    <li>會基本妝容、穿搭者更易入門</li>
+                                    <li>可配合出外景（市區近郊）拍攝者優先錄用</li>
+                                 </ul>
+                                 <p><b>要求條件：</b>男女18-35歲，有無經驗均可，具備自信表現力、親和力。身材勻稱、五官立體，形象健康自然。對拍攝現場有基本了解，能理解簡單的指導動作和場景需求。</p>
+                                 <p><b>薪資：</b>時薪 NT$2,000 - NT$10,000 (+獎金) (依案件，日領)</p>
+                                 <p><b>地點：</b>台北／新北市拍攝棚、外景地點（依排程安排）</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 職缺卡片 2: 帶貨直播主 -->
-                <div class="job-card">
-                    <img src="https://storage.googleapis.com/js-official/files/XQA80Dq8wVnOYvp2r4KYy87qcrooPRPSyIJCDN0j.jpeg" alt="帶貨直播主">
-                    <div class="card-content">
-                        <h3>男女帶貨直播主</h3>
-                         <ul>
-                            <li>✦ 月薪$30k-800k (績效制)</li>
-                            <li>✦ 追求高分潤</li>
-                            <li>✦ 形象好、口條清晰</li>
-                            <li>✦ 無經驗可｜提供培訓</li>
-                        </ul>
-                        <button class="details-btn" onclick="toggleDetails(this)">查看詳情</button>
-                        <div class="job-details">
-                            <h4>【工作條件】</h4>
-                            <ul>
-                                <li>喜歡表演，不害怕面對鏡頭。</li>
-                                <li>追求高分潤。</li>
-                                <li>活潑外向，開朗大方。</li>
-                                <li>形象乾淨，口條清晰。</li>
-                                <li>具抗壓性，態度積極工作。</li>
-                            </ul>
-                            <h4>【工作內容】</h4>
-                            <ul>
-                                <li>網路直播介紹產品及販售。</li>
-                                <li>規劃每場直播前置作業。</li>
-                                <li>廠商溝通與產品選品。</li>
-                                <li>熟悉美妝保養、居家用品等領域佳。</li>
-                            </ul>
-                            <h4>【加分條件】</h4>
-                            <ul>
-                                <li>善於社群經營管理者優先 (請提供IG/FB帳號)。</li>
-                                <li>若有影音或直播作品請提供。</li>
-                            </ul>
-                            <p><b>薪資：</b>月薪 NT$30,000 - NT$800,000元 (依個人資歷或績效而異)</p>
-                            <p><b>歡迎有天賦才華，並想在線上直播嶄露頭角的夥伴們加入團隊！</b></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 職缺卡片 3: SPA按摩美容師 -->
-                <div class="job-card">
-                     <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="SPA按摩美容師">
-                     <div class="card-content">
-                         <h3>SPA按摩美容師</h3>
-                         <ul>
-                            <li>✦ 日領現金</li>
-                            <li>✦ 自由排班｜彈性工時</li>
-                            <li>✦ 無經驗可｜專人培訓</li>
-                            <li>✦ 環境舒適｜工作單純</li>
-                        </ul>
-                        <button class="details-btn" onclick="toggleDetails(this)">查看詳情</button>
-                        <div class="job-details">
-                            <p><b>要求條件：</b></p>
-                            <ul>
-                                <li>台灣籍男女 18-35歲</li>
-                                <li>無需經驗，提供完整培訓</li>
-                                <li>態度親切，服務熱忱</li>
-                            </ul>
-                            <p><b>工作優點：</b></p>
-                            <ul>
-                                <li>舒適優雅的工作環境</li>
-                                <li>工作內容單純</li>
-                                <li>薪資日領，財務彈性</li>
-                                <li>排班自由，兼顧生活</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 職缺卡片 4: 娛樂接待/商務公關 -->
-                <div class="job-card">
-                     <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=600&q=80" alt="娛樂接待/商務公關">
-                     <div class="card-content">
-                        <h3>娛樂接待 / 商務公關</h3>
-                         <ul>
-                            <li>✦ 月收入保障</li>
-                            <li>✦ 日領／週領可選</li>
-                            <li>✦ 無經驗可｜完整培訓</li>
-                            <li>✦ 合法場所｜安全保障</li>
-                        </ul>
-                        <button class="details-btn" onclick="toggleDetails(this)">查看詳情</button>
-                        <div class="job-details">
-                             <h4>【工作內容】</h4>
+                    <!-- 職缺卡片 2: 帶貨直播主 -->
+                    <div class="job-card">
+                        <img src="https://storage.googleapis.com/js-official/files/XQA80Dq8wVnOYvp2r4KYy87qcrooPRPSyIJCDN0j.jpeg" alt="帶貨直播主">
+                        <div class="card-content">
+                            <h3>男女帶貨直播主</h3>
                              <ul>
-                                <li>於高端休閒娛樂場所接待貴賓，提供飲品服務與基本客戶應對。</li>
-                                <li>協助營造輕鬆氣氛，提升顧客滿意度。</li>
-                                <li>無需推銷、無業績壓力。</li>
-                                <li>提供完整培訓，歡迎無經驗者加入。</li>
-                             </ul>
-                             <h4>【福利待遇】</h4>
-                             <ul>
-                                <li>月收入保障 xx 萬元以上（依班數與表現而定）</li>
-                                <li>日領／週領可選，薪資彈性</li>
-                                <li>提供住宿與交通補助 (詳情面議)</li>
-                                <li>專人培訓／入職指導</li>
-                                <li>公司合法營業，安全有保障</li>
-                             </ul>
-                             <p><b>標題參考：</b>娛樂接待人員（晚班）、高端餐飲接待、夜間顧客接待員、酒店服務公關</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 職缺卡片 5: 多元彈性兼職/打工 -->
-                <div class="job-card">
-                     <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=80" alt="多元表演兼職">
-                     <div class="card-content">
-                        <h3>多元彈性兼職/打工 (日領)</h3>
-                         <ul>
-                            <li>✦ 日領現金｜彈性上班</li>
-                            <li>✦ 短期/兼差/PT/假日班</li>
-                            <li>✦ 無經驗可｜保障隱私</li>
-                            <li>✦ 無須喝酒｜無須熬夜</li>
-                        </ul>
-                        <button class="details-btn" onclick="toggleDetails(this)">查看詳情</button>
-                        <div class="job-details">
-                             <p><b>🔸現領工作徵人🔸</b></p>
-                             <ul>
-                                 <li>⭕男女工作都有，歡迎詢問</li>
-                                 <li>⭕18-35歲</li>
-                                 <li>⭕日領現金，自由上班，短期</li>
-                                 <li>⭕兼差，PT打工，無經驗可</li>
-                                 <li>✅保障個人的隱私</li>
-                                 <li>⭕多種工作可選擇</li>
-                                 <li>🚫無須喝酒🚫無須熬夜</li>
-                                 <li>彈性排班</li>
-                             </ul>
-                             <p><b>工作特性：</b></p>
-                             <ul>
-                                 <li>此工作為兼職性質職缺，若有正職工作也歡迎應徵(論件計酬)</li>
-                                 <li>尋找沒有經驗但卻又想嘗試瞭解的人</li>
-                                 <li>若您對表演有慾望，也可投遞履歷 (部分職位)</li>
-                                 <li>無年齡限制 (需滿18)、無身高限制、無體型限制、無性別限制 (依職位)</li>
-                                 <li>*但需夠大方、不害怕鏡頭 (部分職位)</li>
-                             </ul>
-                             <p><b>薪資：</b>時薪 NT$800 - NT$10,000 (+獎金) (依案件，日領)</p>
-                             <p><b>試上一樣有薪水！</b></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 職缺卡片 6: 海外短期打工 -->
-                <div class="job-card">
-                     <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80" alt="海外短期打工">
-                     <div class="card-content">
-                        <h3>海外短期打工 (包住宿) ✈️</h3>
-                         <ul>
-                            <li>✦ 澳洲/加拿大</li>
-                            <li>✦ 包住宿｜安全保障</li>
-                            <li>✦ 短期高薪｜體驗生活</li>
-                            <li>✦ 18歲以上｜無需經驗</li>
-                        </ul>
-                        <button class="details-btn" onclick="toggleDetails(this)">查看詳情</button>
-                        <div class="job-details">
-                            <h4>【國外短期旅遊打工】</h4>
-                            <p><b>地點：</b></p>
-                            <ul>
-                                <li>澳洲 (悉尼、墨爾本）</li>
-                                <li>加拿大（溫哥華、多倫多）</li>
+                                <li>✦ 月薪$30k-800k (績效制)</li>
+                                <li>✦ 追求高分潤</li>
+                                <li>✦ 形象好、口條清晰</li>
+                                <li>✦ 無經驗可｜提供培訓</li>
                             </ul>
-                            <p><b>福利與要求：</b></p>
-                            <ul>
-                                <li>包住宿</li>
-                                <li>需年滿18歲</li>
-                                <li>❌不簽任何形式合約</li>
-                                <li>❌試上一樣有薪水 (依當地規定)</li>
-                            </ul>
-                            <p>提供體驗異國文化，同時短期賺取旅費或儲蓄的機會！</p>
-                            <p><b>注意：</b>目前國際情況可能影響出國安排，請先洽詢最新資訊。</p>
+                            <button class="details-btn" onclick="toggleDetails(this)">查看詳情</button>
+                            <div class="job-details">
+                                <h4>【工作條件】</h4>
+                                <ul>
+                                    <li>喜歡表演，不害怕面對鏡頭。</li>
+                                    <li>追求高分潤。</li>
+                                    <li>活潑外向，開朗大方。</li>
+                                    <li>形象乾淨，口條清晰。</li>
+                                    <li>具抗壓性，態度積極工作。</li>
+                                </ul>
+                                <h4>【工作內容】</h4>
+                                <ul>
+                                    <li>網路直播介紹產品及販售。</li>
+                                    <li>規劃每場直播前置作業。</li>
+                                    <li>廠商溝通與產品選品。</li>
+                                    <li>熟悉美妝保養、居家用品等領域佳。</li>
+                                </ul>
+                                <h4>【加分條件】</h4>
+                                <ul>
+                                    <li>善於社群經營管理者優先 (請提供IG/FB帳號)。</li>
+                                    <li>若有影音或直播作品請提供。</li>
+                                </ul>
+                                <p><b>薪資：</b>月薪 NT$30,000 - NT$800,000元 (依個人資歷或績效而異)</p>
+                                <p><b>歡迎有天賦才華，並想在線上直播嶄露頭角的夥伴們加入團隊！</b></p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                    <!-- 職缺卡片 3: SPA按摩美容師 -->
+                    <div class="job-card">
+                         <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="SPA按摩美容師">
+                         <div class="card-content">
+                             <h3>SPA按摩美容師</h3>
+                             <ul>
+                                <li>✦ 日領現金</li>
+                                <li>✦ 自由排班｜彈性工時</li>
+                                <li>✦ 無經驗可｜專人培訓</li>
+                                <li>✦ 環境舒適｜工作單純</li>
+                            </ul>
+                            <button class="details-btn" onclick="toggleDetails(this)">查看詳情</button>
+                            <div class="job-details">
+                                <p><b>要求條件：</b></p>
+                                <ul>
+                                    <li>台灣籍男女 18-35歲</li>
+                                    <li>無需經驗，提供完整培訓</li>
+                                    <li>態度親切，服務熱忱</li>
+                                </ul>
+                                <p><b>工作優點：</b></p>
+                                <ul>
+                                    <li>舒適優雅的工作環境</li>
+                                    <li>工作內容單純</li>
+                                    <li>薪資日領，財務彈性</li>
+                                    <li>排班自由，兼顧生活</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 職缺卡片 4: 娛樂接待/商務公關 -->
+                    <div class="job-card">
+                         <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=600&q=80" alt="娛樂接待/商務公關">
+                         <div class="card-content">
+                            <h3>娛樂接待 / 商務公關</h3>
+                             <ul>
+                                <li>✦ 月收入保障</li>
+                                <li>✦ 日領／週領可選</li>
+                                <li>✦ 無經驗可｜完整培訓</li>
+                                <li>✦ 合法場所｜安全保障</li>
+                            </ul>
+                            <button class="details-btn" onclick="toggleDetails(this)">查看詳情</button>
+                            <div class="job-details">
+                                 <h4>【工作內容】</h4>
+                                 <ul>
+                                    <li>於高端休閒娛樂場所接待貴賓，提供飲品服務與基本客戶應對。</li>
+                                    <li>協助營造輕鬆氣氛，提升顧客滿意度。</li>
+                                    <li>無需推銷、無業績壓力。</li>
+                                    <li>提供完整培訓，歡迎無經驗者加入。</li>
+                                 </ul>
+                                 <h4>【福利待遇】</h4>
+                                 <ul>
+                                    <li>月收入保障 xx 萬元以上（依班數與表現而定）</li>
+                                    <li>日領／週領可選，薪資彈性</li>
+                                    <li>提供住宿與交通補助 (詳情面議)</li>
+                                    <li>專人培訓／入職指導</li>
+                                    <li>公司合法營業，安全有保障</li>
+                                 </ul>
+                                 <p><b>標題參考：</b>娛樂接待人員（晚班）、高端餐飲接待、夜間顧客接待員、酒店服務公關</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 職缺卡片 5: 多元彈性兼職/打工 -->
+                    <div class="job-card">
+                         <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=80" alt="多元表演兼職">
+                         <div class="card-content">
+                            <h3>多元彈性兼職/打工 (日領)</h3>
+                             <ul>
+                                <li>✦ 日領現金｜彈性上班</li>
+                                <li>✦ 短期/兼差/PT/假日班</li>
+                                <li>✦ 無經驗可｜保障隱私</li>
+                                <li>✦ 無須喝酒｜無須熬夜</li>
+                            </ul>
+                            <button class="details-btn" onclick="toggleDetails(this)">查看詳情</button>
+                            <div class="job-details">
+                                 <p><b>🔸現領工作徵人🔸</b></p>
+                                 <ul>
+                                     <li>⭕男女工作都有，歡迎詢問</li>
+                                     <li>⭕18-35歲</li>
+                                     <li>⭕日領現金，自由上班，短期</li>
+                                     <li>⭕兼差，PT打工，無經驗可</li>
+                                     <li>✅保障個人的隱私</li>
+                                     <li>⭕多種工作可選擇</li>
+                                     <li>🚫無須喝酒🚫無須熬夜</li>
+                                     <li>彈性排班</li>
+                                 </ul>
+                                 <p><b>工作特性：</b></p>
+                                 <ul>
+                                     <li>此工作為兼職性質職缺，若有正職工作也歡迎應徵(論件計酬)</li>
+                                     <li>尋找沒有經驗但卻又想嘗試瞭解的人</li>
+                                     <li>若您對表演有慾望，也可投遞履歷 (部分職位)</li>
+                                     <li>無年齡限制 (需滿18)、無身高限制、無體型限制、無性別限制 (依職位)</li>
+                                     <li>*但需夠大方、不害怕鏡頭 (部分職位)</li>
+                                 </ul>
+                                 <p><b>薪資：</b>時薪 NT$800 - NT$10,000 (+獎金) (依案件，日領)</p>
+                                 <p><b>試上一樣有薪水！</b></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 職缺卡片 6: 海外短期打工 -->
+                    <div class="job-card">
+                         <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80" alt="海外短期打工">
+                         <div class="card-content">
+                            <h3>海外短期打工 (包住宿) ✈️</h3>
+                             <ul>
+                                <li>✦ 澳洲/加拿大</li>
+                                <li>✦ 包住宿｜安全保障</li>
+                                <li>✦ 短期高薪｜體驗生活</li>
+                                <li>✦ 18歲以上｜無需經驗</li>
+                            </ul>
+                            <button class="details-btn" onclick="toggleDetails(this)">查看詳情</button>
+                            <div class="job-details">
+                                <h4>【國外短期旅遊打工】</h4>
+                                <p><b>地點：</b></p>
+                                <ul>
+                                    <li>澳洲 (悉尼、墨爾本）</li>
+                                    <li>加拿大（溫哥華、多倫多）</li>
+                                </ul>
+                                <p><b>福利與要求：</b></p>
+                                <ul>
+                                    <li>包住宿</li>
+                                    <li>需年滿18歲</li>
+                                    <li>❌不簽任何形式合約</li>
+                                    <li>❌試上一樣有薪水 (依當地規定)</li>
+                                </ul>
+                                <p>提供體驗異國文化，同時短期賺取旅費或儲蓄的機會！</p>
+                                <p><b>注意：</b>目前國際情況可能影響出國安排，請先洽詢最新資訊。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
-        <section class="company-features">
-            <h2>公司特色與福利</h2>
+        <section class="company-features w-full py-10 max-w-7xl mx-auto px-4">
+            <h2 class="text-center">公司特色與福利</h2>
             <ul>
                 <li>專業攝影團隊、形象企劃資源</li>
                 <li>彈性排班、日領／週領可選</li>
@@ -378,8 +381,8 @@
             </ul>
         </section>
 
-        <section id="apply" class="apply-section">
-            <h2>應徵方式</h2>
+        <section id="apply" class="apply-section w-full py-10 max-w-7xl mx-auto px-4">
+            <h2 class="text-center">應徵方式</h2>
             <p>請投遞履歷並附上近期個人照片（生活照／IG連結皆可）<br>
             或加入 <b><a href="https://line.me/ti/p/EdPkK988c-" target="_blank" rel="noopener" class="text-green-500 hover:text-green-400 font-bold">LINE</a></b> 洽詢面試事宜</p>
             <p>聯絡人：XXX 經紀企劃</p>
@@ -390,7 +393,7 @@
 
     </main>
 
-    <footer class="site-footer bg-gray-800 text-gray-400 py-8 mt-16">
+    <footer class="site-footer bg-gray-800 text-gray-400 py-8 mt-12 w-full">
         <div class="container mx-auto px-6 text-center">
             <div class="footer-contact" id="wechat-footer">
                 <div class="footer-qr">
@@ -413,7 +416,7 @@
                     <a href="#apply" class="quick-btn">快速面試</a>
                 </span>
             </div>
-            <div class="footer-faq">
+            <div class="footer-faq" id="footer-faq">
                 <h3>常見問題 Q&A</h3>
                 <ul>
                     <li><b>Q：需要相關經驗嗎？</b><br>A：無經驗可，公司提供完整培訓。</li>
@@ -453,70 +456,7 @@
                     mobileMenu.classList.toggle('hidden');
                 });
             }
-            
-            // 打字效果
-            const typingText = "星啟點國際娛樂 Star Point Entertainment";
-            const typingEffect = document.querySelector('.typing-effect');
-            let i = 0;
-            
-            if (typingEffect) {
-                function typing() {
-                    if (i < typingText.length) {
-                        typingEffect.textContent += typingText.charAt(i);
-                        i++;
-                        setTimeout(typing, 100);
-                    }
-                }
-                typing();
-            }
         });
-
-        // 輪播圖JS
-        (function() {
-            const slides = document.querySelectorAll('#header-carousel .header-carousel-slide');
-            const dotsContainer = document.getElementById('carousel-dots');
-            let current = 0;
-            let timer = null;
-            function showSlide(idx) {
-                slides.forEach((slide, i) => {
-                    slide.style.opacity = i === idx ? '1' : '0';
-                    slide.style.zIndex = i === idx ? '2' : '1';
-                    slide.style.transition = 'opacity 0.6s';
-                });
-                Array.from(dotsContainer.children).forEach((dot, i) => {
-                    dot.className = i === idx ? 'dot active' : 'dot';
-                });
-                current = idx;
-            }
-            function prev() {
-                showSlide((current - 1 + slides.length) % slides.length);
-                resetTimer();
-            }
-            function next() {
-                showSlide((current + 1) % slides.length);
-                resetTimer();
-            }
-            function goTo(idx) {
-                showSlide(idx);
-                resetTimer();
-            }
-            function resetTimer() {
-                if (timer) clearInterval(timer);
-                timer = setInterval(() => showSlide((current + 1) % slides.length), 3000);
-            }
-            // 建立圓點
-            dotsContainer.innerHTML = '';
-            slides.forEach((_, i) => {
-                const dot = document.createElement('button');
-                dot.className = 'dot' + (i === 0 ? ' active' : '');
-                dot.onclick = () => goTo(i);
-                dotsContainer.appendChild(dot);
-            });
-            document.getElementById('carousel-prev').onclick = prev;
-            document.getElementById('carousel-next').onclick = next;
-            showSlide(current);
-            resetTimer();
-        })();
     </script>
 
 </body>

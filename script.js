@@ -1,10 +1,10 @@
 // 导航栏滚动效果
 window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
+    const header = document.querySelector('nav');
     if (window.scrollY > 50) {
-        header.style.backgroundColor = 'rgba(26, 26, 26, 0.9)';
+        header.style.backgroundColor = 'rgba(31, 41, 55, 0.95)';
     } else {
-        header.style.backgroundColor = '#1a1a1a';
+        header.style.backgroundColor = '#1F2937';
     }
 });
 
@@ -73,29 +73,79 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- 輪播圖效果 ---
-    // 輪播圖
-    const carouselContainer = document.querySelector('.header-carousel-slides');
-    const carouselImages = document.querySelectorAll('.header-carousel-slide');
-    let currentImageIndex = 0;
-    const totalImages = carouselImages.length;
+    const slides = document.querySelectorAll('.header-carousel-slide');
+    const dotsContainer = document.getElementById('carousel-dots');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    
+    if (slides.length > 0) {
+        let current = 0;
+        let timer = null;
 
-    function showImage(index) {
-        if (carouselContainer && totalImages > 0) {
-            const offset = -index * 100;
-            // 使用更平滑的貝塞爾曲線
-            carouselContainer.style.transition = 'transform 1s cubic-bezier(0.215, 0.61, 0.355, 1)';
-            carouselContainer.style.transform = `translateX(${offset}%)`;
+        // 顯示指定索引的幻燈片
+        function showSlide(idx) {
+            // 隱藏所有幻燈片
+            slides.forEach((slide, i) => {
+                slide.style.opacity = '0';
+                slide.style.zIndex = '1';
+                if (dotsContainer && dotsContainer.children[i]) {
+                    dotsContainer.children[i].classList.remove('active');
+                }
+            });
+            
+            // 顯示當前幻燈片
+            slides[idx].style.opacity = '1';
+            slides[idx].style.zIndex = '2';
+            if (dotsContainer && dotsContainer.children[idx]) {
+                dotsContainer.children[idx].classList.add('active');
+            }
+            
+            current = idx;
         }
-    }
 
-    function showNextImage() {
-        currentImageIndex = (currentImageIndex + 1) % totalImages;
-        showImage(currentImageIndex);
-    }
+        // 顯示上一張
+        function prevSlide() {
+            const newIndex = (current - 1 + slides.length) % slides.length;
+            showSlide(newIndex);
+            resetTimer();
+        }
 
-    if (carouselContainer && totalImages > 0) {
-        showImage(0);
-        setInterval(showNextImage, 4000);
+        // 顯示下一張
+        function nextSlide() {
+            const newIndex = (current + 1) % slides.length;
+            showSlide(newIndex);
+            resetTimer();
+        }
+
+        // 重置計時器
+        function resetTimer() {
+            if (timer) clearInterval(timer);
+            timer = setInterval(nextSlide, 4000);
+        }
+
+        // 創建圓點指示器
+        if (dotsContainer) {
+            dotsContainer.innerHTML = '';
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'dot';
+                if (i === 0) dot.classList.add('active');
+                dot.setAttribute('aria-label', `跳轉到第 ${i+1} 張輪播圖`);
+                dot.addEventListener('click', () => {
+                    showSlide(i);
+                    resetTimer();
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        // 綁定左右箭頭點擊事件
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+        // 啟動輪播
+        showSlide(0);
+        resetTimer();
     }
 
     // 圖片加載完成處理
@@ -120,20 +170,26 @@ document.addEventListener('DOMContentLoaded', function() {
     if (loadedCount === imgElements.length) {
         document.querySelector('.header-carousel-wrapper').style.opacity = 1;
     }
+
+    // 移動端菜單切換
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
 });
 
 // --- 查看詳情切換 (保持全域可訪問) ---
 function toggleDetails(button) {
-    const cardContent = button.closest('.card-content');
-    const detailsDiv = cardContent.querySelector('.job-details');
-
-    if (detailsDiv) { // 確保 detailsDiv 存在
-        if (detailsDiv.style.display === 'block') {
-            detailsDiv.style.display = 'none';
-            button.textContent = '查看詳情';
-        } else {
-            detailsDiv.style.display = 'block';
-            button.textContent = '收合內容';
-        }
+    const details = button.nextElementSibling;
+    if (details.style.display === "block") {
+        details.style.display = "none";
+        button.textContent = "查看詳情";
+    } else {
+        details.style.display = "block";
+        button.textContent = "收起詳情";
     }
 } 
