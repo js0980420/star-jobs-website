@@ -19,14 +19,12 @@
 <body class="bg-amber-50 text-gray-800">
 
     <!-- 導航欄 -->
-    <nav class="bg-gray-800 text-white py-3 sticky top-0 z-50">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="logo-nav">
-                <a href="#" class="text-xl font-bold">
-                    <span class="text-yellow-400"><i class="fas fa-star"></i></span>
-                    <span class="color-flow">星啟點</span>
-                </a>
-            </div>
+    <nav class="bg-gray-800 text-white py-3 fixed top-0 left-0 w-full z-50">
+        <div class="flex justify-between items-center px-6">
+            <a href="#" class="text-2xl font-bold flex items-center">
+                <span class="text-yellow-400 mr-2"><i class="fas fa-star"></i></span>
+                <span class="color-flow">星啟點</span>
+            </a>
             <div class="nav-links hidden md:flex space-x-6">
                 <a href="#benefits" class="hover:text-yellow-300">公司特色</a>
                 <a href="#jobs" class="hover:text-yellow-300">職缺機會</a>
@@ -39,7 +37,6 @@
                 </button>
             </div>
         </div>
-        <!-- 移動端菜單 -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-700 py-2 px-6">
             <a href="#benefits" class="block py-2 hover:text-yellow-300">公司特色</a>
             <a href="#jobs" class="block py-2 hover:text-yellow-300">職缺機會</a>
@@ -48,66 +45,65 @@
         </div>
     </nav>
 
-    <div class="logo-container">
-        <a href="#" class="logo-link">
-             <span class="logo-star"><i class="fas fa-star"></i></span>
-             <span class="logo-text color-flow">星啟點</span>
-        </a>
+    <!-- 移除 logo-container -->
+
+    <!-- 滿版標題區塊 -->
+    <div class="w-full bg-gradient-to-b from-gray-900 to-gray-700 text-white text-center pt-28 pb-8 relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">星啟點國際娛樂</h1>
+        <div class="text-xl md:text-2xl font-medium mb-4">Star Point Entertainment</div>
+        <p class="mb-2">探索你的無限可能・開啟你的閃耀未來</p>
+        <p class="header-desc mb-4">模特兒外拍企劃助理｜網紅經紀｜彈性工時｜高收入獎金</p>
+        <a href="#apply" class="cta-btn">立即應徵</a>
+        <div class="header-note mt-2">不仲介色情、不提供毒品、未滿18歲請勿應徵</div>
     </div>
 
-    <header class="gradient-bg text-white py-16 md:py-24 relative overflow-hidden header-container">
-        <!-- Logo 放在 Header 外面或裡面皆可，目前放在外面 -->
-
-        <!-- 輪播圖容器 (限制大小、溢出隱藏) -->
-        <div class="header-carousel-wrapper">
-            <!-- 輪播幻燈片容器 (實際移動的部分) -->
-            <div class="header-carousel-slides">
-                <!-- 單張幻燈片 - 明星/鎂光燈圖片 -->
-                <div class="header-carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1519682577862-22b62b24e493?auto=format&fit=crop&w=800&q=80" alt="明星鎂光燈">
+    <!-- 滿版輪播圖區塊，文字在上方已分離 -->
+    <div class="relative w-full overflow-hidden" style="height: 400px;">
+        <div id="header-carousel" class="header-carousel-wrapper w-full h-full relative">
+            <div class="header-carousel-slides w-full h-full">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1519682577862-22b62b24e493?auto=format&fit=crop&w=1600&q=80" alt="明星鎂光燈">
+                    <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">模特兒外拍企劃助理</div>
                 </div>
-                <div class="header-carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=800&q=80" alt="舞台表演">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1600&q=80" alt="舞台表演">
+                    <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">男女帶貨直播主</div>
                 </div>
-                <div class="header-carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="演唱會">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1600&q=80" alt="演唱會">
+                    <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">SPA按摩美容師</div>
                 </div>
-                <div class="header-carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1549213783-8284d0336c4f?auto=format&fit=crop&w=800&q=80" alt="明星走紅毯">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1549213783-8284d0336c4f?auto=format&fit=crop&w=1600&q=80" alt="明星走紅毯">
+                    <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">娛樂接待 / 商務公關</div>
                 </div>
-                <div class="header-carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=800&q=80" alt="舞台燈光">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1600&q=80" alt="舞台燈光">
+                    <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">多元彈性兼職/打工</div>
                 </div>
-                <div class="header-carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="音樂表演">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                    <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1600&q=80" alt="音樂表演">
+                    <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">海外短期打工 (包住宿)</div>
                 </div>
             </div>
+            <!-- 左右箭頭 -->
+            <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center z-20 hover:bg-black/80"><i class="fas fa-chevron-left"></i></button>
+            <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center z-20 hover:bg-black/80"><i class="fas fa-chevron-right"></i></button>
         </div>
+        <div class="absolute inset-0 bg-black/60 z-1 pointer-events-none"></div>
+    </div>
 
-        <div class="absolute inset-0 bg-black/60 z-1"></div> <!-- 遮罩 -->
-
-        <!-- 固定在右側的按鈕 (保持不變) -->
-         <div class="fixed-buttons">
-             <a href="https://line.me/ti/p/EdPkK988c-" target="_blank" class="button line-btn" title="加入LINE好友">
-                 <i class="fab fa-line fa-2x" style="color:#00B900"></i>
-                 <span>LINE</span>
-             </a>
-             <a href="#wechat-footer" class="button wechat-btn" title="查看微信聯絡方式">
-                 <i class="fab fa-weixin fa-2x" style="color:#07C160"></i>
-                 <span>微信</span>
-             </a>
-         </div>
-
-        <div class="container mx-auto px-6 text-center relative z-10 header-text-content">
-            <div class="header-content">
-                <h1 id="main-title-typing"><span class="typing-effect"></span></h1>
-                <p>探索你的無限可能・開啟你的閃耀未來</p>
-                <p class="header-desc">模特兒外拍企劃助理｜網紅經紀｜彈性工時｜高收入獎金</p>
-                <a href="#apply" class="cta-btn">立即應徵</a>
-                <div class="header-note">不仲介色情、不提供毒品、未滿18歲請勿應徵</div>
-            </div>
-        </div>
-    </header>
+    <!-- 固定在右側的按鈕 (保持不變) -->
+    <div class="fixed-buttons">
+        <a href="https://line.me/ti/p/EdPkK988c-" target="_blank" class="button line-btn" title="加入LINE好友">
+            <i class="fab fa-line fa-2x" style="color:#00B900"></i>
+            <span>LINE</span>
+        </a>
+        <a href="#wechat-footer" class="button wechat-btn" title="查看微信聯絡方式">
+            <i class="fab fa-weixin fa-2x" style="color:#07C160"></i>
+            <span>微信</span>
+        </a>
+    </div>
 
     <main class="container mx-auto px-6 py-16">
 
@@ -473,7 +469,30 @@
                 typing();
             }
         });
+
+        // 輪播圖左右切換
+        (function() {
+            const slides = document.querySelectorAll('#header-carousel .header-carousel-slide');
+            let current = 0;
+            function showSlide(idx) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = i === idx ? 'flex' : 'none';
+                });
+            }
+            function prev() {
+                current = (current - 1 + slides.length) % slides.length;
+                showSlide(current);
+            }
+            function next() {
+                current = (current + 1) % slides.length;
+                showSlide(current);
+            }
+            document.getElementById('carousel-prev').onclick = prev;
+            document.getElementById('carousel-next').onclick = next;
+            showSlide(current);
+        })();
     </script>
 
 </body>
+</html>
 </html>

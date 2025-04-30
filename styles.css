@@ -1030,3 +1030,34 @@ footer {
     ...
 }
 */
+
+/* 讓輪播圖滿版 */
+.header-carousel-wrapper, .header-carousel-slides, .header-carousel-slide {
+    width: 100vw !important;
+    height: 100% !important;
+    min-height: 400px;
+}
+.header-carousel-slide img {
+    width: 100vw !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block;
+}
+
+/* 移除不再需要的樣式 */
+.logo-container, .header-container {
+    display: none !important;
+}
+
+/* 標題區塊避免被導航欄遮住 */
+.w-full.bg-gradient-to-b {
+    padding-top: 88px !important;
+}
+
+/* 讓導航欄滿版 */
+nav.bg-gray-800 {
+    width: 100vw !important;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #222;
+}
