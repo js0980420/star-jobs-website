@@ -7,7 +7,7 @@
     <meta name="description" content="星啟點國際娛樂提供多元高薪工作機會，包括模特兒外拍、網紅經紀、直播主等職位。彈性工時，高收入，立即應徵。">
     <meta name="keywords" content="高薪工作,模特兒外拍,網紅經紀,直播主,彈性工時,日領現金,兼職打工,台北工作">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,8 @@
 <body class="bg-amber-50 text-gray-800">
 
     <!-- 導航欄 -->
-    <nav class="bg-gray-800 text-white py-3 fixed top-0 left-0 w-full z-50">
-        <div class="flex justify-between items-center w-full">
+    <nav class="bg-gray-800 text-white py-3 fixed top-0 left-0 w-full z-50" style="width:100vw;">
+        <div class="flex justify-between items-center w-full" style="width:100vw;">
             <a href="#" class="text-2xl font-bold flex items-center ml-6">
                 <span class="text-yellow-400 mr-2"><i class="fas fa-star"></i></span>
                 <span class="color-flow">星啟點</span>
@@ -58,30 +58,30 @@
     </div>
 
     <!-- 滿版輪播圖區塊，文字在上方已分離 -->
-    <div class="relative w-full overflow-hidden" style="height: 400px;">
-        <div id="header-carousel" class="header-carousel-wrapper w-full h-full relative">
-            <div class="header-carousel-slides w-full h-full">
-                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+    <div class="relative w-full overflow-hidden" style="height: 400px; width:100vw;">
+        <div id="header-carousel" class="header-carousel-wrapper w-full h-full relative" style="width:100vw;">
+            <div class="header-carousel-slides w-full h-full" style="width:100vw;">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
                     <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80" alt="模特兒外拍">
                     <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">模特兒外拍企劃助理</div>
                 </div>
-                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
                     <img class="object-cover w-full h-full" src="https://storage.googleapis.com/js-official/files/XQA80Dq8wVnOYvp2r4KYy87qcrooPRPSyIJCDN0j.jpeg" alt="帶貨直播主">
                     <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">男女帶貨直播主</div>
                 </div>
-                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
                     <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80" alt="SPA按摩美容師">
                     <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">SPA按摩美容師</div>
                 </div>
-                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
                     <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1600&q=80" alt="娛樂接待/商務公關">
                     <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">娛樂接待 / 商務公關</div>
                 </div>
-                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
                     <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1600&q=80" alt="多元彈性兼職/打工">
                     <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">多元彈性兼職/打工</div>
                 </div>
-                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end">
+                <div class="header-carousel-slide w-full h-full flex flex-col items-center justify-end" style="width:100vw;">
                     <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1600&q=80" alt="海外短期打工">
                     <div class="carousel-caption absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-2 rounded text-lg font-bold">海外短期打工 (包住宿)</div>
                 </div>
@@ -502,7 +502,7 @@
             }
             function resetTimer() {
                 if (timer) clearInterval(timer);
-                timer = setInterval(() => showSlide((current + 1) % slides.length), 4000);
+                timer = setInterval(() => showSlide((current + 1) % slides.length), 2000);
             }
             // 建立圓點
             dotsContainer.innerHTML = '';
