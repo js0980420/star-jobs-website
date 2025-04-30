@@ -7,1113 +7,117 @@
 body {
     font-family: 'Noto Sans TC', sans-serif;
     line-height: 1.6;
-    /* 保留 bg-amber-50 作為基礎背景色 */
     overflow-x: hidden;
+    background: #f8f8f8;
 }
 
 h1, h2, h3 {
-    font-weight: 700; /* 加粗標題 */
+    font-weight: 700;
 }
 
-/* 导航栏样式 */
-header {
-    background-color: #1a1a1a;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
+/* 導航欄 */
 nav {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100vw;
+    background: #1a1a1a;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0.8rem 2rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #222;
 }
-
-.logo {
+nav a {
     color: #fff;
-    font-size: 1.5rem;
+    text-decoration: none;
     font-weight: bold;
+    margin-right: 2rem;
+    transition: color 0.2s;
 }
+nav a:last-child { margin-right: 0; }
+nav a:hover { color: #ffcc00; }
 
 .nav-links {
     display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 2rem;
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ffd700;
-}
-
-/* 主要内容区域 */
-main {
-    margin-top: 80px;
-    padding: 2rem 0 !important;
-    border-radius: 0 !important;
-}
-
-section {
-    padding: 4rem 2rem;
-}
-
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1920x1080/?entertainment') center/cover;
-    color: #fff;
-    text-align: center;
-    padding: 8rem 2rem;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.about, .services, .contact {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
 }
 
-.service-card {
-    background: #f5f5f5;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-/* 社交媒体图标 */
-.social-icons {
-    position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    z-index: 1000;
-}
-
-.social-icon {
-    width: 50px;
-    height: 50px;
-    background: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+/* 主視覺區塊 */
+.header-main {
+    width: 100vw;
+    background: linear-gradient(180deg, #232946 0%, #3a506b 100%);
     color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 40px;
 }
-
-.social-icon:hover {
-    transform: scale(1.1);
+.header-main h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
 }
-
-.social-icon.line {
-    background: #00B900;
-}
-
-.social-icon.wechat {
-    background: #07C160;
-}
-
-.social-icon i {
+.header-main .en-title {
     font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    color: #e0e0e0;
 }
-
-/* 页脚 */
-footer {
-    background: #1a1a1a;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-.footer-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 0 1rem 0;
-}
-
-.footer-qr {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 1rem;
-}
-
-.qr-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.qr-img {
-    width: 140px;
-    height: 140px;
-    object-fit: contain;
-    border-radius: 12px;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+.header-main p {
     margin-bottom: 0.5rem;
+    color: #e0e0e0;
 }
-
-.footer-copy {
+.header-main .cta-btn {
+    background: linear-gradient(45deg, #ff007f, #ffcc00);
     color: #fff;
-    font-size: 0.95rem;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nav-links {
-        margin-top: 1rem;
-        flex-direction: column;
-    }
-
-    .nav-links li {
-        margin: 0.5rem 0;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .social-icons {
-        right: 10px;
-    }
-
-    .social-icon {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 600px) {
-    .footer-qr {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .qr-img {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-/* ---- 霓虹/娛樂風格調整 ---- */
-
-/* 頁首漸層背景與文字效果 */
-.gradient-bg {
-    background: linear-gradient(-45deg, #ff007f, #ff0000, #ff9900, #ffcc00);
-    background-size: 400% 400%;
-    background-position: 0% 50%;
-}
-
-/* 頁首內容 */
-.header-content h1 {
-    font-size: 5rem; /* 從原本的4rem增加到5rem */
-    font-weight: 800; /* 更粗 */
-    color: #fff;
-    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #00e1ff; /* 標題霓虹效果 */
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-.header-content p {
-    color: #eee; /* 亮灰色文字 */
-    font-size: 1.5rem; /* Tailwind text-2xl */
-    margin-bottom: 2rem;
-}
-
-.header-desc {
-    font-size: 1.25rem; /* Tailwind text-xl */
-    color: #f0f0f0;
-    margin-bottom: 2.5rem;
-}
-
-.cta-btn {
-    background: linear-gradient(45deg, #ff007f, #ffcc00); /* 粉-黃 漸層按鈕 */
-    color: white;
     font-weight: bold;
-    padding: 0.8rem 2rem;
-    border-radius: 9999px; /* full */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
-    transition: all 0.3s ease;
+    padding: 0.7rem 2rem;
+    border-radius: 9999px;
     border: none;
-    display: inline-block; /* 確保是行內區塊元素 */
-    text-decoration: none; /* 移除底線 */
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.2);
+    transition: filter 0.2s;
+}
+.header-main .cta-btn:hover { filter: brightness(1.2); }
+.header-main .header-note {
+    color: #ffcc00;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
 }
 
-.cta-btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(255, 0, 127, 0.6);
-}
-
-.header-note {
-    margin-top: 2rem;
-    color: #ffcc00; /* 黃色警示文字 */
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
-
-/* ---- 固定右側按鈕 (修正) ---- */
-.fixed-buttons {
-    position: fixed;
-    top: 50%;
-    right: 20px; /* 或 1.25rem */
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; /* 按鈕間距 */
-    z-index: 1000;
-}
-
-.fixed-buttons .button {
-    display: flex; /* 改為 flex 讓圖示和文字水平排列 */
-    align-items: center; /* 垂直居中 */
-    gap: 0.5rem; /* 圖示和文字間距 */
-    background-color: rgba(255, 255, 255, 0.85); /* 半透明白色背景 */
-    backdrop-filter: blur(5px); /* 毛玻璃效果 */
-    border-radius: 30px; /* 圓角矩形 */
-    width: auto; /* 自動寬度 */
-    height: 50px;
-    padding: 0 1rem; /* 左右內邊距 */
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    text-decoration: none; /* 移除連結底線 */
-    color: #333; /* 文字顏色 */
-    overflow: hidden; /* 隱藏超出部分 */
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.fixed-buttons .button:hover {
-    transform: translateX(-10px) scale(1.05); /* 懸停時左移並放大 */
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-.fixed-buttons .button i {
-    font-size: 1.5rem; /* 圖示大小 */
-    transition: transform 0.3s ease;
-}
-
-.fixed-buttons .button:hover i {
-     transform: rotate(15deg); /* 懸停時圖示輕微旋轉 */
-}
-
-.fixed-buttons .button span {
-    font-size: 1rem;
-    font-weight: 500;
-    display: block; /* 確保文字顯示 */
-}
-
-/* ---- 職缺區塊 (基本樣式 + 霓虹感) ---- */
-.jobs-section {
-    padding: 4rem 1rem; /* 上下邊距加大 */
-}
-
-.jobs-section h2 {
-    font-size: 2.5rem; /* Tailwind text-4xl */
-    text-align: center;
-    margin-bottom: 3rem;
-    color: #4a00e0; /* 深紫色標題 */
-    text-shadow: 0 0 8px rgba(74, 0, 224, 0.5); /* 標題霓虹 */
-}
-
-.jobs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自動適應欄寬 */
-    gap: 2rem; /* 卡片間距 */
-}
-
-.job-card {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* 確保圖片圓角 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid transparent; /* 預留邊框位置 */
-}
-
-.job-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(74, 0, 224, 0.2); /* 懸停時更明顯陰影 */
-    border-image: linear-gradient(45deg, #6a00ff, #ff007f, #00e1ff) 1; /* 懸停時彩色邊框 */
-}
-
-.job-card img {
-    width: 100%;
-    height: 200px; /* 固定圖片高度 */
-    object-fit: cover; /* 圖片填滿容器 */
-    display: block;
-}
-
-.job-card h3 {
-    font-size: 1.5rem; /* Tailwind text-2xl */
-    margin: 1.5rem 1.5rem 1rem 1.5rem;
-    color: #333;
-    /* 可選：給職位名稱加漸層色 */
-    /* background: linear-gradient(90deg, #6a00ff, #ff007f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-}
-
-.job-card ul {
-    list-style: none;
-    padding: 0 1.5rem 1.5rem 1.5rem;
+/* 輪播圖 */
+.header-carousel-wrapper, .header-carousel-slides, .header-carousel-slide {
+    width: 100vw;
+    min-height: 400px;
+    height: 400px;
+    position: relative;
     margin: 0;
-    color: #555;
-}
-
-.job-card li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.2rem;
-    position: relative;
-}
-
-.job-card li::before {
-    content: '★'; /* 星星符號 */
-    position: absolute;
-    left: 0;
-    color: #ffcc00; /* 黃色星星 */
-    font-size: 0.8rem;
-    top: 4px;
-}
-
-/* ---- 公司特色區塊 ---- */
-.company-features {
-    background: linear-gradient(45deg, rgba(74, 0, 224, 0.1), rgba(255, 0, 127, 0.1)); /* 淡紫粉漸層背景 */
-    padding: 3rem 1rem;
-    margin: 4rem 0;
-    border-radius: 15px;
-    text-align: center;
-}
-.company-features h2 {
-     font-size: 2rem; /* Tailwind text-3xl */
-     margin-bottom: 2rem;
-     color: #4a00e0;
-}
-.company-features ul {
-     list-style: none;
-     padding: 0;
-     display: inline-block; /* 讓列表居中 */
-     text-align: left; /* 列表文字靠左 */
-     color: #444;
-}
-.company-features li {
-     margin-bottom: 0.8rem;
-     padding-left: 1.5rem;
-     position: relative;
-     font-size: 1.1rem;
-}
-.company-features li::before {
-     content: '✓'; /* 勾勾符號 */
-     position: absolute;
-     left: 0;
-     color: #ff007f; /* 粉色勾勾 */
-     font-weight: bold;
-     top: 2px;
-}
-
-/* ---- 海外職缺 ---- */
-.overseas-jobs {
-    text-align: center;
-    padding: 3rem 1rem;
-    margin-bottom: 4rem;
-    background: url('https://images.unsplash.com/photo-1503220718299-87011e1f9038?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; /* 背景圖 */
-    border-radius: 15px;
-    position: relative;
-    color: white;
+    border-radius: 0;
     overflow: hidden;
 }
-.overseas-jobs::before { /* 添加遮罩讓文字更清晰 */
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-}
-.overseas-jobs * { /* 確保內容在遮罩之上 */
+.header-carousel-slides {
     position: relative;
+}
+.header-carousel-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 400px;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.6s;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.header-carousel-slide.active {
+    opacity: 1;
     z-index: 2;
 }
-.overseas-jobs h2 {
-     font-size: 2rem;
-     margin-bottom: 1rem;
-     color: #fff;
-     text-shadow: 0 0 8px #00e1ff; /* 藍色霓虹 */
-}
-.overseas-jobs p {
-     font-size: 1.1rem;
-     margin-bottom: 1.5rem;
-     line-height: 1.8;
-}
-.overseas-jobs ul {
-    list-style: none;
-    padding: 0;
-    display: inline-block;
-}
-.overseas-jobs li {
-    margin-bottom: 0.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    display: inline-block; /* 讓標籤並排 */
-    margin: 0 0.3rem 0.5rem;
-    font-size: 0.95rem;
-}
-
-/* ---- 應徵方式 ---- */
-.apply-section {
-    background-color: #f8f9fa; /* 淡灰色背景 */
-    padding: 3rem 1rem;
-    margin-bottom: 4rem;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0, 0.08);
-}
-.apply-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #333;
-}
-.apply-section p {
-    color: #555;
-    line-height: 1.7;
-    margin-bottom: 1rem;
-    max-width: 600px; /* 限制文字寬度 */
-    margin-left: auto;
-    margin-right: auto;
-}
-.apply-section b a { /* 強調 LINE 連結 */
-    font-weight: 700;
-    text-decoration: none; /* 移除底線 */
-    transition: color 0.3s;
-}
-
-/* ---- 頁尾 ---- */
-.site-footer {
-    background: #1a1a1a; /* 深灰色背景 */
-    color: #aaa; /* 頁尾文字顏色 */
-    padding: 3rem 1rem 2rem 1rem; /* 增加內邊距 */
-    margin-top: 4rem;
-}
-
-/* 頁尾 QR Code 區塊 */
-.footer-qr {
-    display: flex;
-    flex-wrap: wrap; /* 在小螢幕換行 */
-    justify-content: center;
-    gap: 2rem; /* 增加間距 */
-    margin-bottom: 3rem; /* 與下方內容間距 */
-}
-
-.qr-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.qr-img {
-    width: 140px; /* 稍微加大 */
-    height: 140px;
-    object-fit: contain;
-    border-radius: 15px; /* 圓角 */
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* 白色陰影 */
-    margin-bottom: 1rem; /* 與文字間距 */
-    border: 3px solid #ff007f; /* 粉色邊框 */
-}
-
-.qr-block p {
-    font-size: 1rem;
-    color: #eee; /* 亮一點的文字 */
-}
-
-.qr-block a {
-    color: #00e1ff; /* 藍色連結 */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-.qr-block a:hover {
-    color: #fff;
-}
-
-/* 頁尾 FAQ */
-.footer-faq {
-    margin-top: 2rem;
-    text-align: left;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: 1px solid #444; /* 分隔線 */
-    padding-top: 2rem;
-}
-
-.footer-faq h3 {
-    font-size: 1.4rem; /* 加大標題 */
-    margin-bottom: 1.5rem;
-    color: #fff;
-    text-align: center;
-    text-shadow: 0 0 5px #ff007f; /* 粉色霓虹 */
-}
-
-.footer-faq ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-faq li {
-    margin-bottom: 1.2rem; /* 增加行距 */
-    font-size: 1rem;
-    color: #ccc; /* 稍亮文字 */
-    line-height: 1.6;
-}
-.footer-faq b {
-    color: #00e1ff; /* Q: 藍色 */
-    display: block; /* 讓 A: 換行 */
-    margin-bottom: 0.3rem;
-}
-
-/* 頁尾版權 */
-.footer-copy {
-    color: #888; /* 版權文字顏色 */
-    font-size: 0.9rem; /* 稍小字體 */
-    margin-top: 3rem; /* 與上方間距 */
-    border-top: 1px solid #444; /* 分隔線 */
-    padding-top: 1rem;
-} 
-
-
-/* 工作卡片改為高對比色彩 */
-.job-card {
-    background: linear-gradient(135deg, #1a1a1a, #333);
-    border: 2px solid #ff007f;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    color: white;
-    box-shadow: 0 10px 30px rgba(255, 0, 127, 0.2);
-}
-
-.job-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(255, 0, 127, 0.4);
-    border-color: #ffcc00;
-}
-
-.job-card h3 {
-    background: linear-gradient(90deg, #ff007f, #ffcc00);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.8rem;
-    padding: 0.5rem 0;
-}
-
-.job-card ul {
-    padding: 1rem 1.5rem;
-}
-
-.job-card li {
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-    padding: 8px 0;
-}
-
-.job-card li::before {
-    content: '✦';  /* 更華麗的星號 */
-    color: #ffcc00;
-}
-
-@keyframes bg-move {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.gradient-bg {
-    background: linear-gradient(-45deg, #ff007f, #ff0000, #ff9900, #ffcc00);
-    background-size: 400% 400%;
-    animation: bg-move 10s ease infinite;
-}
-
-@keyframes button-glow {
-    0%, 100% {
-        box-shadow: 0 0 10px rgba(255,0,127,0.5);
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(255,0,127,0.8), 0 0 30px rgba(255,0,127,0.6);
-    }
-}
-
-.cta-btn {
-    animation: button-glow 2s infinite;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-/* 讓每張卡片有不同的動畫延遲，看起來像波浪 */
-.job-card:nth-child(1) {
-    animation: float 4s ease-in-out infinite;
-}
-
-.job-card:nth-child(2) {
-    animation: float 4s ease-in-out infinite 1s; /* 1秒延遲 */
-}
-
-.job-card:nth-child(3) {
-    animation: float 4s ease-in-out infinite 2s; /* 2秒延遲 */
-}
-
-.animated-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
-}
-
-.animated-bg::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background: radial-gradient(circle, transparent 20%, #000 80%),
-                linear-gradient(45deg, #ff007f 25%, transparent 25%),
-                linear-gradient(-45deg, #6a00ff 25%, transparent 25%);
-    background-size: 20px 20px, 60px 60px, 60px 60px;
-    animation: bg-scroll 15s linear infinite;
-    opacity: 0.15;
-}
-
-@keyframes bg-scroll {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.typing-container {
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,0.7);
-    color: #fff;
-    padding: 10px 0;
-}
-
-.typing-effect {
-    border-right: 4px solid #fff; /* 加粗游標 */
-    padding-right: 5px;
-    white-space: nowrap;
-    overflow: hidden;
-    font-size: inherit;
-    font-weight: inherit;
-    color: #ffcc00;
-}
-
-@keyframes hue-rotate {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    100% {
-        filter: hue-rotate(360deg);
-    }
-}
-
-.color-flow {
-    background: linear-gradient(45deg, #ff0000, #ff9900, #ffff00, #33cc33, #3399ff, #cc33ff);
-    background-size: 600% 600%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: hue-rotate 10s infinite linear;
-}
-
-/* 卡片內容區 */
-.card-content {
-    padding: 1rem 1.5rem 1.5rem 1.5rem; /* 統一內邊距 */
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* 讓內容區佔滿剩餘空間 */
-}
-
-.job-card ul {
-    list-style: none;
-    padding: 0; /* 移除 ul 的預設 padding */
-    margin-bottom: 1rem; /* 列表下方間距 */
-    flex-grow: 1; /* 讓列表填滿空間，按鈕置底 */
-}
-
-.job-card li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.2rem;
-    position: relative;
-    color: #ccc; /* 調整列表文字顏色 */
-    border-bottom: none; /* 移除之前的虛線 */
-}
-
-.job-card li::before {
-    content: '✦';
-    position: absolute;
-    left: 0;
-    color: #ffcc00;
-    font-size: 0.8rem;
-    top: 4px;
-}
-
-/* 查看詳情按鈕 */
-.details-btn {
-    background: linear-gradient(45deg, #ff007f, #ff9900);
-    color: white;
-    border: none;
-    padding: 10px 28px;
-    border-radius: 24px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1rem;
-    box-shadow: 0 2px 8px rgba(255,0,127,0.18);
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    transition: all 0.2s;
-    outline: none;
-}
-.details-btn:hover, .details-btn:focus {
-    background: linear-gradient(45deg, #ff9900, #ff007f);
-    box-shadow: 0 4px 16px rgba(255,0,127,0.28);
-    transform: scale(1.07);
-}
-
-/* 職缺詳情區塊 (預設隱藏) */
-.job-details {
-    display: none; /* 預設隱藏 */
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px dashed rgba(255, 255, 255, 0.3); /* 分隔線 */
-    text-align: left; /* 詳細內容靠左 */
-    color: #ddd; /* 詳細內容文字顏色 */
-    font-size: 0.95rem;
-    line-height: 1.7;
-}
-
-.job-details h4 {
-    color: #ffcc00; /* 詳細內容小標題顏色 */
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    border-bottom: 1px solid #ffcc00;
-    display: inline-block;
-    padding-bottom: 2px;
-}
-
-.job-details ul {
-    list-style: disc; /* 使用圓點列表 */
-    padding-left: 1.5rem; /* 列表縮排 */
-    margin-bottom: 1rem;
-}
-.job-details li {
-   color: #ddd; /* 確保列表項顏色 */
-   padding-left: 0; /* 移除繼承的 padding */
-   border-bottom: none; /* 移除繼承的 border */
-}
-.job-details li::before {
-    content: none; /* 移除繼承的星號 */
-}
-
-.job-details p {
-    margin-bottom: 0.8rem;
-}
-.job-details b {
-    color: #ff007f; /* 加粗文字用粉色 */
-}
-
-/* 頁首容器調整 */
-.header-container {
-    display: flex; /* 使用 Flexbox 排列 */
-    align-items: center; /* 垂直居中 */
-    justify-content: center; /* 水平居中（如果需要文字疊加在輪播上） */
-    min-height: 70vh; /* 設定最小高度，可調整 */
-    padding-top: 80px; /* 預留 Logo 空間 */
-}
-
-/* 輪播圖外層容器 */
-.header-carousel-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 800px; /* 稍微加寬 */
-    height: 380px; /* 稍微加高 */
-    margin: 1.5rem auto; /* 增加上下間距 */
-    overflow: hidden;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25); /* 加強陰影 */
-    z-index: 1;
-}
-
-/* 輪播圖幻燈片容器 */
-.header-carousel-slides {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s cubic-bezier(.77,0,.18,1);
-}
-
-/* 單張輪播圖幻燈片 */
-.header-carousel-slide {
-    width: 100%;
-    flex-shrink: 0;
-    height: 100%;
-}
-
-.header-carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-    filter: brightness(1.1) contrast(1.1); /* 增加圖片亮度和對比度 */
-}
-
-.header-carousel-slide:hover img {
-    transform: scale(1.03); /* 懸停時輕微放大 */
-}
-
-/* Header 文字內容區塊調整 */
-.header-text-content {
-    padding-top: 0; /* 移除繼承的 padding-top */
-    position: relative; /* 確保在輪播圖和遮罩之上 */
-    z-index: 10;
-    background: rgba(0,0,0,0.6); /* 增加背景不透明度 */
-    padding: 2rem;
-    border-radius: 15px;
-    max-width: 800px; /* 限制文字區寬度 */
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid rgba(255,255,255,0.1); /* 加框 */
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2); /* 增加陰影 */
-}
-
-/* Logo 樣式 */
-.logo-container {
-    position: absolute;
-    top: 20px; /* 稍微往下移 */
-    left: 30px; /* 稍微往右移 */
-    z-index: 1100;
-}
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-.logo-star {
-    font-size: 2rem; /* 加大星星 */
-    color: #ffcc00;
-    margin-right: 10px;
-    text-shadow: 0 0 10px #ffcc00, 0 0 15px #ff9900; /* 加強光暈 */
-    animation: star-spin 6s linear infinite;
-}
-.logo-text {
-    font-family: 'Inter', 'Noto Sans TC', sans-serif; /* 使用更現代的字體 */
-    font-size: 2rem; /* 加大文字 */
-    font-weight: 700; /* 粗體 */
-    letter-spacing: 2px; /* 字距 */
-    color: #fff; /* 白色文字 */
-    text-shadow: 1px 1px 0px #555, /* 模擬一點立體感 */
-                 0 0 8px rgba(255,255,255,0.5); /* 輕微光暈 */
-    /* 嘗試模擬破碎感 (效果有限) */
-    position: relative;
-}
-/* 可以在 logo-text 上加 ::before 或 ::after 做更複雜的破碎效果，但會比較複雜 */
-
-/* 移除之前的 .color-flow 應用在 logo-text 上，或調整 .color-flow */
-.color-flow {
-    /* ... 保留之前的 color-flow 樣式，如果其他地方還需要 ... */
-    /* 如果 logo 不需要顏色流動，可以移除 logo-text 的 color-flow class */
-}
-
-@keyframes star-spin {
-    from { transform: rotate(0deg) scale(1); }
-    50% { transform: rotate(180deg) scale(1.1); } /* 中間放大一點 */
-    to { transform: rotate(360deg) scale(1); }
-}
-
-/* 確保 typing-effect 同樣大小 */
-#main-title-typing .typing-effect {
-    font-size: inherit;
-    font-weight: inherit;
-    border-right: 4px solid #fff; /* 加粗游標 */
-}
-
-/* 調整遮罩 */
-.header-container .absolute.inset-0.bg-black\/60 {
-    background-color: rgba(0, 0, 0, 0.5); /* 降低遮罩深度，讓圖片更清晰 */
-}
-
-#main-title-typing {
-    font-size: 5rem !important; /* 加大字體並強制生效 */
-    font-weight: 800;
-    color: #fff;
-    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #00e1ff;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-/* 確保 span 繼承 */
-#main-title-typing .typing-effect {
-    font-size: inherit !important; /* 繼承父級大小 */
-    font-weight: inherit;
-    border-right: 4px solid #fff;
-    color: #ffcc00; /* 打字效果顏色 */
-    /* 保留其他 typing-effect 樣式 */
-}
-
-/* 移除或註解掉可能衝突的舊規則 */
-/*
-.header-content h1 {
-    font-size: 5rem;
-    ...
-}
-*/
-
-/* 讓輪播圖滿版 */
-.header-carousel-wrapper, .header-carousel-slides, .header-carousel-slide {
-    width: 100vw !important;
-    height: 100% !important;
-    min-height: 400px;
-    max-width: 100vw !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
-}
-.header-carousel-slide img {
-    width: 100vw !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block;
-}
-
-/* 移除不再需要的樣式 */
-.logo-container, .header-container {
-    display: none !important;
-}
-
-/* 標題區塊避免被導航欄遮住 */
-.w-full.bg-gradient-to-b {
-    padding-top: 88px !important;
-}
-
-/* 讓導航欄滿版 */
-nav.bg-gray-800 {
-    width: 100vw !important;
-    left: 0;
-    right: 0;
-    border-bottom: 1px solid #222;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-nav .flex {
-    width: 100vw !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-/* 援點指示器美化 */
-#carousel-dots button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #bbb;
-    border: none;
-    margin: 0 4px;
-    transition: background 0.3s;
-    outline: none;
-    cursor: pointer;
-}
-#carousel-dots .bg-yellow-400 {
-    background: #ffcc00 !important;
-}
-#carousel-dots .bg-gray-400 {
-    background: #bbb !important;
-}
-
-/***** 讓所有主區塊滿版 *****/
-nav, .gradient-bg, .header-carousel-wrapper, .header-carousel-slides, .header-carousel-slide, main, body {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    box-sizing: border-box;
-}
-
-main {
-    padding: 2rem 0 !important;
-    border-radius: 0 !important;
-}
-
-.header-carousel-wrapper, .header-carousel-slides, .header-carousel-slide {
-    min-height: 400px;
-    border-radius: 0 !important;
-}
-
-/***** 輪播圖圖片樣式 *****/
 .carousel-img {
     width: 100vw;
     height: 400px;
@@ -1121,10 +125,7 @@ main {
     display: block;
     max-width: 100vw;
     max-height: 400px;
-    transition: opacity 0.6s;
 }
-
-/***** 輪播圖標題 *****/
 .carousel-caption {
     position: absolute;
     bottom: 24px;
@@ -1139,8 +140,6 @@ main {
     z-index: 10;
     text-align: center;
 }
-
-/***** 輪播圖左右箭頭 *****/
 .carousel-arrow {
     position: absolute;
     top: 50%;
@@ -1162,8 +161,6 @@ main {
 .carousel-arrow.left { left: 24px; }
 .carousel-arrow.right { right: 24px; }
 .carousel-arrow:hover { background: rgba(0,0,0,0.8); }
-
-/***** 輪播圖圓點指示器 *****/
 .carousel-dots {
     position: absolute;
     bottom: 12px;
@@ -1186,8 +183,6 @@ main {
 .dot.active {
     background: #ffcc00;
 }
-
-/***** 輪播圖遮罩 *****/
 .carousel-overlay {
     position: absolute;
     inset: 0;
@@ -1196,14 +191,251 @@ main {
     pointer-events: none;
 }
 
-/***** 保留必要hover *****/
-.cta-btn:hover, .details-btn:hover, .carousel-arrow:hover, .dot:hover {
-    filter: brightness(1.2);
+/* 固定右側按鈕 */
+.fixed-buttons {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 1000;
+}
+.fixed-buttons .button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 30px;
+    width: auto;
+    height: 50px;
+    padding: 0 1rem;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: #333;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.2s, transform 0.2s;
+}
+.fixed-buttons .button:hover {
+    background-color: #fff;
+    transform: translateX(-10px) scale(1.05);
+}
+.fixed-buttons .button i {
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+.fixed-buttons .button:hover i {
+    transform: rotate(15deg);
+}
+.fixed-buttons .button span {
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-/***** 移除多餘動畫、霓虹、色彩流動、卡片浮動等效果 *****/
-.color-flow, .job-card, .job-card:hover, .animated-bg, .blink {
-    animation: none !important;
-    box-shadow: none !important;
-    background: none !important;
+/* 卡片區塊（職缺、公司特色等） */
+.jobs-section, .company-features, .apply-section {
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0 auto 3rem auto;
+    padding: 3rem 0 2rem 0;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+.jobs-section h2, .company-features h2, .apply-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #222;
+    text-align: center;
+}
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+.job-card {
+    background: #232946;
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.job-card:hover {
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    transform: translateY(-6px) scale(1.03);
+}
+.job-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.job-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+    color: #ffcc00;
+}
+.job-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+.job-card li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+    color: #eee;
+}
+.job-card li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: #ffcc00;
+    font-size: 0.9rem;
+    top: 4px;
+}
+.details-btn {
+    background: linear-gradient(45deg, #ff007f, #ff9900);
+    color: #fff;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    transition: filter 0.2s, transform 0.2s;
+}
+.details-btn:hover {
+    filter: brightness(1.2);
+    transform: scale(1.07);
+}
+.job-details {
+    display: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #ffcc00;
+    color: #eee;
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+.job-details h4 {
+    color: #ffcc00;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #ffcc00;
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+/* 公司特色區塊 */
+.company-features ul {
+    list-style: none;
+    padding: 0;
+    color: #333;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.company-features li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.1rem;
+}
+.company-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ff007f;
+    font-weight: bold;
+    top: 2px;
+}
+
+/* 應徵方式區塊 */
+.apply-section p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.apply-section b a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #ff007f;
+    border-bottom: 1px dashed #ff007f;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+.apply-section b a:hover {
+    color: #ffcc00;
+    border-bottom: 1px solid #ffcc00;
+}
+
+/* 頁尾 */
+.site-footer {
+    background: #1a1a1a;
+    color: #aaa;
+    padding: 3rem 1rem 2rem 1rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+.footer-qr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.qr-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.qr-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 0.5rem;
+    border: 2px solid #ff007f;
+}
+.footer-copy {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+}
+
+/***** 響應式 *****/
+@media (max-width: 900px) {
+    .jobs-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+    .header-main h1 { font-size: 2rem; }
+    .header-main .en-title { font-size: 1.1rem; }
+    .header-carousel-wrapper, .header-carousel-slides, .header-carousel-slide, .carousel-img { height: 220px; min-height: 220px; }
+}
+@media (max-width: 600px) {
+    nav { flex-direction: column; padding: 0.5rem 0.5rem; }
+    .nav-links { flex-direction: column; gap: 0.5rem; }
+    .header-main { padding-top: 70px; padding-bottom: 20px; }
+    .jobs-section, .company-features, .apply-section { padding: 1.5rem 0.2rem; border-radius: 8px; }
+    .job-card { padding: 1rem 0.5rem; }
+    .footer-qr { gap: 1rem; }
+    .qr-img { width: 80px; height: 80px; }
 }
