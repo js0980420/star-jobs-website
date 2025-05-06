@@ -180,6 +180,23 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileMenu.classList.toggle('hidden');
         });
     }
+
+    // FAQ 展開/收合
+    var faqBtns = document.querySelectorAll('#footer-faq .faq-question');
+    faqBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var answer = btn.nextElementSibling;
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                // 關閉其他已展開
+                document.querySelectorAll('#footer-faq .faq-answer').forEach(function(a){
+                    a.style.display = "none";
+                });
+                answer.style.display = "block";
+            }
+        });
+    });
 });
 
 // --- 查看詳情切換 (保持全域可訪問) ---
