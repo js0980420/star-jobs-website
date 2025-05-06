@@ -189,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (answer.style.display === "block") {
                 answer.style.display = "none";
             } else {
-                // 關閉其他已展開
                 document.querySelectorAll('#footer-faq .faq-answer').forEach(function(a){
                     a.style.display = "none";
                 });
