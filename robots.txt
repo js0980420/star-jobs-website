@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://starjobtw.com/sitemap.xml
+Sitemap: https://www.星啟點.com/sitemap.xml 
